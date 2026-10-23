@@ -71,6 +71,11 @@ h3{font-size:20px;font-weight:700}
 .slide{flex:0 0 min(340px,85%);scroll-snap-align:start;padding:24px;display:grid;gap:10px;align-content:start}
 .slide .chip{justify-self:start;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(79,140,255,.18);color:var(--a)}
 .slide .num{font-size:28px;font-weight:800;color:var(--ink)}
+.real-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.real-card{padding:16px;display:grid;gap:8px;align-content:start}
+.real-card img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--gb);cursor:zoom-in}
+.real-card h4{font-size:15px;line-height:1.35}
+.footer-bottom a{text-decoration:underline}
 .ctrl{display:flex;justify-content:center;gap:12px;margin-top:22px}
 .cert-gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}
 .cert-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--gb);cursor:zoom-in}
@@ -145,7 +150,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
  <div class="nav-container">
   <a href="#home" class="nav-logo">L.<b>TOLUAFE</b></a>
   <ul class="nav-menu" id="menu">
-   <li><a class="nav-link" href="#home">Accueil</a></li><li><a class="nav-link" href="#about">À propos</a></li><li><a class="nav-link" href="#certifications">Certifications</a></li><li><a class="nav-link" href="#parcours">Parcours</a></li><li><a class="nav-link" href="#projects">Projets</a></li><li><a class="nav-link" href="#veille">Veille</a></li><li><a class="nav-link" href="#epreuves">E5 / E6</a></li><li><a class="nav-link" href="#contact">Contact</a></li>
+   <li><a class="nav-link" href="#home">Accueil</a></li><li><a class="nav-link" href="#about">À propos</a></li><li><a class="nav-link" href="#certifications">Certifications</a></li><li><a class="nav-link" href="#parcours">Parcours</a></li><li><a class="nav-link" href="#projects">Projets</a></li><li><a class="nav-link" href="#realisations">Réalisations</a></li><li><a class="nav-link" href="#veille">Veille</a></li><li><a class="nav-link" href="#contact">Contact</a></li>
    <li><button class="icon-btn" id="theme" aria-label="Changer de thème"><i class="fas fa-moon"></i></button></li>
   </ul>
   <button class="hamburger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -175,7 +180,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
     <h3>Lenzo TOLUAFE</h3>
     <p>Étudiant en BTS SIO option SISR à Nouméa, je me spécialise dans les solutions d'infrastructure, les systèmes et les réseaux. J'ai été cuisinier professionnel, jusqu'à 400 repas par jour : j'en ai gardé la rigueur et le calme sous pression.</p>
     <p>Objectif : une licence pro ou une école d'ingénieur en cybersécurité, puis cyber-enquêteur à la Gendarmerie Nationale.</p>
-    <div><a href="CV_Lenzo_TOLUAFE.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Télécharger mon CV</a></div>
+    <div class="hero-buttons"><a href="CV_Lenzo_TOLUAFE.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Télécharger mon CV</a><a href="Tableau_synthese_E5_TOLUAFE_Lenzo.xlsx" class="btn" download><i class="fas fa-table"></i> Tableau de synthèse E5</a></div>
    </div>
    <div class="skills">
     <h4>Mes compétences</h4>
@@ -228,6 +233,14 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
  </div>
 </section>
 
+<section id="realisations">
+ <div class="container">
+  <h2 class="section-title">Autres réalisations</h2>
+  <p class="veille-subtitle">Les réalisations de mon tableau de synthèse E5, avec leur preuve.</p>
+  <div class="real-grid" id="rgrid"></div>
+ </div>
+</section>
+
 <section id="veille">
  <div class="container">
   <h2 class="section-title">Veille technologique</h2>
@@ -241,20 +254,6 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
   </div>
   <div class="ctrl"><button class="icon-btn" data-t="t-veille" data-d="-1" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button><button class="icon-btn" data-t="t-veille" data-d="1" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button></div>
   <div class="glass veille-conclusion"><h3>Ma méthode</h3><p>Feedly pour centraliser les flux, LinkedIn pour suivre les acteurs, sites éditeurs (Zscaler, Cisco, SecurityWeek, Check Point). Consultation chaque vendredi, notes classées par date. Côté juridique : CNIL, ANSSI et Union européenne.</p></div>
- </div>
-</section>
-
-<section id="epreuves">
- <div class="container">
-  <h2 class="section-title">Épreuves E5 et E6</h2>
-  <div class="glass epreuves-box">
-   <p>Tableau de synthèse E5 et situations professionnelles E6.</p>
-   <div class="hero-buttons">
-    <a class="btn btn-primary" href="https://docs.google.com/spreadsheets/d/1AWuU7FZz8hIBfFHLDOk7yv1JexT72PAFCt7fyPh7UBU/edit" target="_blank" rel="noopener">Tableau E5</a>
-    <button class="btn" onclick="openP('rocky')">E6 · Rocky Linux 10</button>
-    <button class="btn" onclick="openP('tp31')">E6 · ACL Cisco 881</button>
-   </div>
-  </div>
  </div>
 </section>
 
@@ -277,7 +276,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
   <div class="footer-col"><h4>Liens rapides</h4><ul><li><a href="#home">Accueil</a></li><li><a href="#projects">Projets</a></li><li><a href="#contact">Contact</a></li></ul></div>
   <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:lenzotoluafe1@gmail.com"><i class="fas fa-envelope"></i> lenzotoluafe1@gmail.com</a></li><li><i class="fas fa-map-marker-alt"></i> Nouméa, Nouvelle-Calédonie</li></ul></div>
  </div>
- <div class="footer-bottom">© 2026 Lenzo TOLUAFE. Site pédagogique, aucun cookie de suivi.</div>
+ <div class="footer-bottom">© 2026 Lenzo TOLUAFE · <a href="#" onclick="legal(0);return false">Mentions légales</a> · <a href="#" onclick="legal(1);return false">Confidentialité</a></div>
 </footer>
 
 <script>
@@ -316,6 +315,7 @@ E5:[["Guide du projet d'alternance IFR-LZO-DEV-01 (v3)","1Cs5fWgHjOHD5YrZMajNSyR
 var P={
 rocky:{t:"Durcissement Rocky Linux 10",ic:"fa-server",tags:["Linux","Sécurité","Alternance"],s:"Sécurisation d'une VM en 6 phases, puis stack LEMP et WordPress.",w:"E5",img:"Images/rocky-install.png",
  d:"Installer une VM Rocky Linux 10.1 sur vSphere, la durcir, l'intégrer à l'Active Directory et lui faire héberger WordPress. Un snapshot après chaque phase.",l:["Installation et LVM","Mise à jour et outils","SELinux, PAM, audit, SNMP, firewalld","sysctl, services, cron, SSH","Compte de service SNOW et sudo","IP fixe, certificat, jonction AD","Nginx, MariaDB, PHP-FPM, WordPress"],i:["Images/rocky-install.png","Images/rocky-selinux.png","Images/rocky-firewall.png","Images/rocky-ad-join.png"]},
+moov:{t:"Vidéo TikTok · application Moov' de la BCI",ic:"fa-video",tags:["Communication","Présence en ligne","Alternance"],s:"Une vidéo TikTok pour promouvoir l'application Moov' auprès des 16-25 ans.",d:"Réalisation d'une vidéo publicitaire au format TikTok pour mettre en avant l'application Moov' de la BCI, destinée aux 16-25 ans, qui donne accès à des réductions.",l:["Cible : les 16-25 ans","Message : les réductions proposées par l'application","Format : vidéo courte pour TikTok","Compétence : développer la présence en ligne de l'organisation"]},
 tp28:{t:"MikroTik · restriction du laboratoire",ic:"fa-ban",tags:["Réseau","Sécurité"],s:"Une règle de pare-feu coupe la sortie du laboratoire par ether1.",w:"S28",d:"Empêcher 192.168.40.0/24 de sortir par ether1 sur un RB2011 (RouterOS 6.49.20), 24 → 28 août 2026.",l:["Chaîne forward, source 192.168.40.0/24, sortie ether1, drop","Vérification : règles et journal LAB-BLOCK","Retour arrière par le commentaire de la règle","Export .rsc, route par défaut et NAT rétablis"]},
 tp29:{t:"ER605 · isolement du laboratoire",ic:"fa-layer-group",tags:["Réseau","Sécurité"],s:"Quatre VLAN et deux ACL pour isoler le laboratoire.",w:"S29",d:"Segmenter en 4 VLAN sur un TP-Link ER605 et isoler le laboratoire, en gardant son accès Internet.",l:["VLAN 10 infrastructure, 20 SISR, 30 SLAM, 40 laboratoire","ACL LAB_DENY_SISR et LAB_DENY_SERVEURS","Règle désactivée puis recréée, avec rapport","Restauration en 5 minutes"]},
 tp31:{t:"Cisco 881 · ACL service Web",ic:"fa-globe",tags:["Réseau","Sécurité"],s:"Une ACL étendue ne laisse passer que HTTP et HTTPS.",w:"S31",d:"Ne laisser passer que le web entre SISR (VLAN 20) et l'infrastructure (VLAN 10), sur un routeur Cisco 881.",l:["Interface Fa4 remontée, ancienne ACL supprimée","ACL_SISR_WEB_ONLY : HTTP et HTTPS vers 172.16.10.10","Autres flux vers l'infrastructure bloqués","Commandes préparées, exécutées, puis restauration"]},
@@ -339,6 +339,13 @@ function cover(im,k,first){var c=['png','jpg','jpeg','webp'].map(function(e){ret
 /* images de certifications et logos : cherche dans Images/, Images/certifications/, certifications/ et à la racine */
 function find(im,names){var bs=['Images/','Images/certifications/','certifications/',''],es=['png','jpg','jpeg','webp'],c=[];names.split(',').forEach(function(n){bs.forEach(function(b){es.forEach(function(e){c.push(b+n+'.'+e)})})});var i=0;im.onerror=function(){if(i>=c.length){im.remove()}else im.src=c[i++]};im.onerror()}
 document.querySelectorAll('img[data-f]').forEach(function(im){find(im,im.dataset.f);if(im.classList.contains('cert-img'))im.addEventListener('click',function(){lbi.src=im.src;lbd.showModal()})});
+/* autres réalisations (preuves : Images/preuve-<clé>.png) */
+var R=[["audit","Audit et inventaire du parc informatique, TechForm NC (OCS Inventory, GLPI, matrice des risques)","Formation"],["vlan-gns3","Configuration VLAN et segmentation réseau sous GNS3","Formation"],["kb","Mise en place d'une base de connaissances (procédures, documentation technique)","Formation"],["proxmox","Installation de Proxmox","Formation"],["packettracer","Simulation réseau avec Cisco Packet Tracer","Formation"],["linuxmint","Installation et prise en main de Linux Mint","Formation"],["fedora","Installation et configuration de Fedora","Formation"],["virtualbox","Création et gestion de machines virtuelles avec VirtualBox","Formation"],["helpdesk","Support Helpdesk N1/N2 à la BCI (tickets, diagnostic, assistance multi-agences)","Alternance"],["deploiement","Déploiement de postes de travail (image entreprise, configuration du matériel)","Alternance"],["procedures","Rédaction de procédures (déploiement d'un PC, application métier)","Alternance"],["imprimantes","Gestion des imprimantes (configuration, mise à jour, dépannage)","Alternance"],["pdq","Inventaire du parc avec PDQ Inventory et déploiement de logiciels avec PDQ Deploy","Alternance"],["vmware","Utilisation de VMware Workstation / Player","Alternance"],["ad","Administration Active Directory","Alternance"],["rgpd","Formation au RGPD","Alternance"]];
+var rg=document.getElementById("rgrid");
+R.forEach(function(r){var d=document.createElement("div");d.className="glass real-card";d.innerHTML='<img alt="Preuve : '+esc(r[1])+'"><span class="chip tag">'+r[2]+'</span><h4>'+esc(r[1])+'</h4>';rg.appendChild(d);var im=d.querySelector("img");find(im,"preuve-"+r[0]);im.addEventListener("click",function(){lbi.src=im.src;lbd.showModal()})});
+/* mentions légales et confidentialité */
+function legal(k){var L=[["Mentions légales","<h4>ÉDITEUR</h4><p>Lenzo TOLUAFE, étudiant en BTS SIO option SISR, Nouméa, Nouvelle-Calédonie. Contact : lenzotoluafe1@gmail.com. Site pédagogique et personnel, non commercial.</p><h4>HÉBERGEMENT</h4><p>GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p><h4>PROPRIÉTÉ INTELLECTUELLE</h4><p>Les contenus de ce site sont ma création, sauf mention contraire. Les marques citées appartiennent à leurs propriétaires.</p><h4>ENTREPRISES CITÉES</h4><p>La BCI et TechForm NC sont citées à titre de parcours personnel et pédagogique. Ce site ne publie aucune donnée interne ni confidentielle.</p>"],["Confidentialité","<h4>DONNÉES COLLECTÉES</h4><p>Ce site ne collecte aucune donnée et n'utilise aucun cookie de suivi.</p><h4>STOCKAGE LOCAL</h4><p>Ton navigateur peut mémoriser ton choix de thème clair ou sombre. Cette donnée reste sur ton appareil.</p><h4>TES DROITS</h4><p>Conformément au RGPD, tu peux demander l'accès, la rectification ou la suppression de toute donnée transmise par e-mail, à lenzotoluafe1@gmail.com. Tu peux aussi saisir la CNIL.</p>"]][k];show("<h2>"+L[0]+"</h2>"+L[1])}
+
 /* CV : cherche le PDF sous plusieurs noms quand le site est en ligne */
 (function(){var cv=document.querySelectorAll('a[href*="CV_Lenzo"]');cv.forEach(function(a){a.target="_blank";a.rel="noopener"});
 if(location.protocol.indexOf("http")!==0)return;
