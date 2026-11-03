@@ -96,7 +96,7 @@ h3{font-size:20px;font-weight:700}
 .timeline-card .when{font-size:13px;font-weight:600;color:var(--b)}
 
 /* projets */
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .project-card{display:flex;flex-direction:column;overflow:hidden;text-align:left;cursor:pointer;font:inherit;color:inherit;padding:0}
 .project-card:hover{border-color:var(--b);transform:translateY(-4px)}
 .project-image{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,rgba(79,140,255,.25),rgba(34,211,238,.15));display:grid;place-items:center;overflow:hidden}
@@ -120,12 +120,16 @@ h3{font-size:20px;font-weight:700}
 .contact-item p,.contact-item a{font-size:14px;overflow-wrap:anywhere;color:var(--muted)}
 
 /* modale et pied de page */
-dialog{border:1px solid var(--gb);border-radius:var(--r);padding:0;width:min(760px,calc(100% - 32px));max-height:86vh;background:var(--bg);color:var(--ink)}
+dialog{margin:auto;border:1px solid var(--gb);border-radius:var(--r);padding:0;width:min(760px,calc(100% - 32px));max-height:86vh;background:var(--bg);color:var(--ink)}
 dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 .mbody{padding:32px;display:grid;gap:12px}
 .mbody h2{font-size:28px}
 .mbody h4{font-size:13px;letter-spacing:.08em;color:var(--b);margin-top:8px}
 .mbody ul{padding-left:20px;color:var(--muted);display:grid;gap:4px}
+.steps{list-style:none;counter-reset:s;display:grid;gap:10px;padding:0!important}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-weight:700;font-size:13px}
+.term{background:#050914;border:1px solid var(--gb);border-radius:12px;padding:14px;font:13px/1.7 ui-monospace,Consolas,monospace;color:#cfe3ff;overflow-x:auto;white-space:pre}
 .mclose{position:sticky;top:10px;float:right;margin:10px 10px 0 0}
 .doc{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;border:1px solid var(--gb);border-radius:10px;font-size:14px;margin-top:6px}
 .doc:hover{border-color:var(--b)}
@@ -165,7 +169,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
  <div class="container hero-content">
   <div>
    <h1><span class="hero-name"><span>Lenzo</span><span>TOLUAFE</span></span><span class="hero-subtitle">ÉTUDIANT EN BTS SIO - OPTION SISR</span></h1>
-   <p class="hero-description">Alternant à la BCI à Nouméa. Je passe des cuisines à l'infrastructure : postes de travail, support utilisateurs, imprimantes et réseaux. Demain, la cybersécurité.</p>
+   <p class="hero-description">Alternant à la BCI à Nouméa. Je passe des cuisines à l'infrastructure : postes de travail, support utilisateurs, imprimantes, réseaux et durcissement de serveurs Linux. Demain, la cybersécurité.</p>
    <div class="hero-buttons">
     <a href="#about" class="btn btn-primary">Découvrir mon profil</a>
     <a href="#projects" class="btn">Mes projets</a>
@@ -302,7 +306,7 @@ var secs=[].slice.call(document.querySelectorAll("section[id]")),links=document.
 addEventListener("scroll",function(){var y=scrollY+120,cur=secs[0].id;secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});links.forEach(function(l){l.classList.toggle("active",l.getAttribute("href")==="#"+cur)})});
 
 /* compétences */
-var SK=[["fa-ticket-alt","Ticketing","Prise en charge des tickets dans CESAM et ServiceNow : diagnostic, résolution ou escalade, suivi jusqu'à la clôture."],["fa-laptop","Postes de travail","Déploiement de l'image entreprise, configuration du matériel, maintenance du parc à la BCI."],["fa-network-wired","Réseaux","Segmentation en VLAN, plan d'adressage et isolement du laboratoire sur TP-Link ER605."],["fa-shield-alt","Sécurité","ACL, isolation de VLAN, restriction de l'administration, RGPD (MOOC CNIL), méthode DIC."],["fa-boxes","Inventaire","OCS Inventory et GLPI : audit du parc de TechForm NC (environ 30 postes)."]];
+var SK=[["fa-ticket-alt","Ticketing","Prise en charge des tickets dans CESAM et ServiceNow : diagnostic, résolution ou escalade, suivi jusqu'à la clôture."],["fa-laptop","Postes de travail","Déploiement de l'image entreprise, configuration du matériel, maintenance du parc à la BCI."],["fa-terminal","Linux (Rocky)","Installation, LVM, durcissement (SELinux, PAM, firewalld), Nginx, MariaDB, PHP-FPM et WordPress."],["fa-users-cog","Active Directory","Jonction d'un serveur Rocky Linux au domaine (realm, sssd)."],["fa-cubes","Virtualisation","VM sur vSphere avec un snapshot à chaque phase du projet."],["fa-network-wired","Réseaux","Segmentation en VLAN, plan d'adressage et isolement du laboratoire sur TP-Link ER605."],["fa-shield-alt","Sécurité","ACL, isolation de VLAN, restriction de l'administration, RGPD (MOOC CNIL), méthode DIC."],["fa-boxes","Inventaire","OCS Inventory et GLPI : audit du parc de TechForm NC (environ 30 postes)."]];
 var sg=document.getElementById("skills");
 SK.forEach(function(s){var b=document.createElement("button");b.className="skill-card";b.innerHTML='<i class="fas '+s[0]+'"></i><span class="skill-name">'+s[1]+'</span><span class="more">En savoir plus...</span>';b.onclick=function(){show('<h2>'+s[1]+'</h2><p>'+s[2]+'</p>')};sg.appendChild(b)});
 
@@ -317,16 +321,24 @@ S32:[["Livrable 1 · État des lieux","1XzG7arAEUGbw4EtCa7cbFmhuCcMrCUrJ"],["Liv
 S33:[["Livrable 1 · Avant toute manipulation","1w8M0UjnyJ5nDIiEd7lb3vOkLghFnvbk5"],["Livrable 2 · Mise en œuvre","18DYAY1Z768jnYt4jwAc0IXzRYa1YpLfE"],["Livrables 3 et 4 · Tests et incident","1A4pJSylaxueLPin3vo6GAmQPrCa4BQJh"]],
 E5:[["Guide du projet d'alternance IFR-LZO-DEV-01 (v3)","1Cs5fWgHjOHD5YrZMajNSyRUAwmIsA2qa"]]};
 var P={
-tp29:{t:"ER605 · isolement du laboratoire",ic:"fa-layer-group",art:"vlan",tags:["Réseau","Sécurité"],s:"Quatre VLAN et deux ACL pour isoler le laboratoire.",w:"S29",d:"Segmenter en 4 VLAN sur un TP-Link ER605 et isoler le laboratoire, en gardant son accès Internet.",l:["VLAN 10 infrastructure, 20 SISR, 30 SLAM, 40 laboratoire","ACL LAB_DENY_SISR et LAB_DENY_SERVEURS","Règle désactivée puis recréée, avec rapport","Restauration en 5 minutes"]},
-tp32:{t:"ER605 · administration réservée",ic:"fa-user-shield",art:"acl",tags:["Réseau","Sécurité"],s:"Administration réservée au poste enseignant.",w:"S32",d:"Réserver l'administration du réseau au poste de l'enseignant, en conditions d'épreuve.",l:["Network Isolation sur les VLAN 20, 30 et 40","PROF_ONLY_ADMIN avant DENY_ALL_TO_VLAN10","Réservation DHCP par MAC, 192.168.10.15","Limite : une ACL ne filtre pas le trafic vers l'IP du routeur"]}};
+rocky:{t:"Durcissement d'un serveur Rocky Linux 10",ic:"fa-server",art:"term",tags:["Linux","Sécurité","Alternance"],chips:["Rocky Linux 10.1","vSphere","SELinux Enforcing","6 phases","Snapshot à chaque étape"],s:"Une VM Rocky Linux sécurisée en 6 phases, intégrée à l'Active Directory, puis stack LEMP et WordPress.",w:"E5",d:"Mon projet d'alternance : installer une VM Rocky Linux 10.1 sur vSphere, la durcir, l'intégrer à l'Active Directory et lui faire héberger un site WordPress. Un snapshot après chaque phase permet de revenir en arrière. Tout se fait sur un environnement de test, sans aucune donnée interne de la BCI.",term:"# état de ma VM de test IFR-LZO-DEV-01\n$ getenforce\nEnforcing\n$ sudo firewall-cmd --state\nrunning",steps:1,l:["Installation de la VM dans vSphere, partitionnement LVM","Mise à jour des paquets et installation des outils","Durcissement : SELinux, mots de passe (PAM), audit, SNMP, firewalld","Optimisation : sysctl, services, cron, SSH","Compte de service SNOW et droits sudo","IP fixe, certificat, jonction au domaine Active Directory (realm, sssd)"],after:[["APPLICATIF","Stack LEMP : Nginx durci, MariaDB, PHP-FPM, puis WordPress."],["COMPÉTENCES","Administration Linux, durcissement, intégration Active Directory, supervision SNMP, gestion des snapshots."]]},
+tp32:{t:"ER605 · administration réservée",ic:"fa-user-shield",art:"acl",tags:["Réseau","Sécurité"],chips:["TP-Link ER605","Isolation de VLAN","ACL","Conditions d'épreuve"],s:"Administration réservée au poste enseignant.",w:"S32",d:"Réserver l'administration du réseau au poste de l'enseignant et la refuser à tous les autres postes, en conditions d'épreuve et sans ligne de commande.",l:["Network Isolation sur les VLAN 20, 30 et 40","PROF_ONLY_ADMIN avant DENY_ALL_TO_VLAN10","Réservation DHCP par MAC, 192.168.10.15","Limite : une ACL ne filtre pas le trafic vers l'IP du routeur, d'où la combinaison avec l'isolation"]}};
 function art(k){var A="var(--a)",B="var(--b)",C="#f97362",M="rgba(150,170,210,.35)",v='<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">';
  if(k==="vlan"){v+='<path d="M160 44L70 128M160 44L160 138M160 44L250 128" stroke="'+M+'" stroke-width="2" fill="none"/>';[[160,44,C],[70,128,A],[160,138,B],[250,128,A]].forEach(function(n){v+='<circle cx="'+n[0]+'" cy="'+n[1]+'" r="15" fill="rgba(11,16,32,.85)" stroke="'+n[2]+'" stroke-width="3"/>'})}
  if(k==="acl"){for(var r=0;r<5;r++)v+='<rect x="30" y="'+(30+r*28)+'" width="260" height="14" rx="7" fill="'+M+'"/><rect x="30" y="'+(30+r*28)+'" width="'+[200,120,235,80,160][r]+'" height="14" rx="7" fill="'+(r==3?C:(r%2?B:A))+'"/>'}
+ if(k==="term"){for(var q=0;q<6;q++)v+='<rect x="30" y="'+(26+q*24)+'" width="'+[110,170,90,200,130,70][q]+'" height="9" rx="4.5" fill="'+(q%3?(q%2?B:A):C)+'"/>';v+='<rect x="30" y="160" width="11" height="14" fill="'+C+'"/>'}
  return v+'</svg>'}
 function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
 function show(h){document.getElementById("dbody").innerHTML=h;if(!dlg.open)dlg.showModal()}
-function openP(k){var p=P[k],h='<h2>'+esc(p.t)+'</h2><p>'+esc(p.d)+'</p><h4>DÉROULÉ</h4><ul>'+p.l.map(function(x){return'<li>'+esc(x)+'</li>'}).join("")+'</ul>';
- var gi=p.i||[1,2,3,4].map(function(n){return'Images/'+k+'-'+n+'.png'});h+='<h4>CAPTURES</h4><div class="gal">'+gi.map(function(u){return'<img src="'+u+'" alt="Capture" loading="lazy" data-z="'+u+'" onerror="this.remove()">'}).join("")+'</div>';
+function imgFail(im){var g=im.closest(".gal");im.remove();if(g&&!g.children.length){var h=g.previousElementSibling;if(h&&h.tagName==="H4")h.remove();g.remove()}}
+function openP(k){var p=P[k],h='<h2>'+esc(p.t)+'</h2>';
+ if(p.chips)h+='<div class="project-tags">'+p.chips.map(function(c){return'<span class="tag">'+esc(c)+'</span>'}).join("")+'</div>';
+ h+='<p>'+esc(p.d)+'</p>';
+ if(p.term)h+='<pre class="term">'+esc(p.term)+'</pre>';
+ var tg=p.steps?'ol class="steps"':'ul';
+ h+='<h4>'+(p.steps?'LES 6 PHASES':'DÉROULÉ')+'</h4><'+tg+'>'+p.l.map(function(x){return'<li>'+esc(x)+'</li>'}).join("")+'</'+tg.split(" ")[0]+'>';
+ (p.after||[]).forEach(function(x){h+='<h4>'+esc(x[0])+'</h4><p>'+esc(x[1])+'</p>'});
+ var gi=p.i||[1,2,3,4].map(function(n){return'Images/'+k+'-'+n+'.png'});h+='<h4>CAPTURES</h4><div class="gal">'+gi.map(function(u){return'<img src="'+u+'" alt="Capture" loading="lazy" data-z="'+u+'" onerror="imgFail(this)">'}).join("")+'</div>';
  var d=DOCS[p.w||""];h+='<h4>DOCUMENTS</h4>';
  h+=d?d.map(function(x){return'<a class="doc" href="'+F+x[1]+'/view" target="_blank" rel="noopener"><span>'+esc(x[0])+'</span><em>Ouvrir ↗</em></a>'}).join(""):'<p>Aucun document déposé pour l\'instant.</p>';
  show(h)}
