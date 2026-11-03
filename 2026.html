@@ -294,19 +294,16 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 <section id="veille">
  <div class="container">
   <h2 class="section-title">Veille technologique</h2>
-  <div class="veille-subtitle"><h3>Le Zero Trust</h3><p>Le Zero Trust, c'est ne jamais faire confiance par défaut et toujours vérifier. Le moindre privilège, c'est donner seulement les droits nécessaires. Je suis ce sujet depuis avril 2026, chaque vendredi.</p></div>
-  <div class="track" id="t-veille">
-   <div class="glass slide"><span class="chip">Zscaler</span><p class="num">65 %</p><p>des entreprises prévoient de remplacer leur VPN (Virtual Private Network, le tunnel chiffré classique) dans l'année.</p><a class="alink" href="https://www.zscaler.com/fr/press/zscaler-threatlabz-2025-vpn-risk-report-over-half-organizations-say-security-and-compliance" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-   <div class="glass slide"><span class="chip">Zscaler</span><p class="num">81 %</p><p>prévoient de mettre en place le Zero Trust dans les 12 mois.</p><a class="alink" href="https://www.zscaler.com/fr/press/zscaler-threatlabz-2025-vpn-risk-report-over-half-organizations-say-security-and-compliance" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-            <div class="glass slide"><span class="chip">Check Point Research</span><p class="num">29 %</p><p>des incidents de ransomware déclarés en 2025 visaient le secteur industriel. Solution citée : segmenter les réseaux IT (informatique) et OT (technologies opérationnelles).</p><a class="alink" href="https://brandsit.pl/?p=1974427" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-      <div class="glass slide"><span class="chip">eGroup</span><h3>Une attaque par IA renforce le Zero Trust</h3><p>Selon l'article, un incident avec un agent IA autonome montre que l'IA accélère des techniques d'attaque connues. Les organisations qui appliquent le Zero Trust sont mieux protégées.</p><a class="alink" href="https://egroup-us.com/news/ai-cyberattack-zero-trust-lessons/" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-  </div>
-  <div class="ctrl"><button class="icon-btn" data-t="t-veille" data-d="-1" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button><button class="icon-btn" data-t="t-veille" data-d="1" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button></div>
-  <div class="glass veille-conclusion"><h3>Mes articles</h3><div class="docs-list">
-   <a class="doc" href="https://www.zscaler.com/fr/press/zscaler-threatlabz-2025-vpn-risk-report-over-half-organizations-say-security-and-compliance" target="_blank" rel="noopener"><span>Zscaler ThreatLabz, 2025 VPN Risk Report</span><em>Ouvrir ↗</em></a>
-      <a class="doc" href="https://brandsit.pl/?p=1974427" target="_blank" rel="noopener"><span>Check Point Research, le secteur industriel et le Zero Trust</span><em>Ouvrir ↗</em></a>
-      <a class="doc" href="https://egroup-us.com/news/ai-cyberattack-zero-trust-lessons/" target="_blank" rel="noopener"><span>eGroup, ce que l'incident OpenAI et Hugging Face enseigne sur le Zero Trust</span><em>Ouvrir ↗</em></a>
-  </div></div>
+  <div class="veille-subtitle"><h3>Le Zero Trust</h3><p>Ma veille porte sur le Zero Trust, depuis avril 2026. Le principe est de ne jamais faire confiance par défaut, de toujours vérifier et de donner le moindre privilège (seulement les droits nécessaires). Selon Zscaler en 2026, 84 % des organisations prévoient de passer au Zero Trust ou le font déjà.</p></div>
+  <div class="glass info-card" style="margin-bottom:24px"><h3>Le Zero Trust, en bref</h3>
+   <ol class="steps">
+    <li><span><b>La définition.</b> Le Zero Trust est un modèle de sécurité où aucun utilisateur et aucun appareil n'est considéré comme digne de confiance par défaut, même à l'intérieur du réseau. Chaque accès doit être vérifié.</span></li>
+    <li><span><b>En quoi ça consiste.</b> Ne jamais faire confiance par défaut, vérifier chaque accès (qui demande, avec quel appareil) et donner le moindre privilège, c'est-à-dire seulement les droits nécessaires. On y ajoute la segmentation : séparer les réseaux pour limiter ce qu'un utilisateur ou un attaquant peut atteindre.</span></li>
+    <li><span><b>Pourquoi c'est bien.</b> Le réseau d'une entreprise n'a plus de frontière nette, avec le télétravail, le cloud et les appareils partout. Faire confiance à tout ce qui est « à l'intérieur » ne suffit plus.</span></li>
+    <li><span><b>Ses avantages.</b> Une surface d'attaque plus petite, un attaquant qui se déplace moins facilement dans le réseau (le déplacement latéral) et des données mieux protégées. Cette liste vient de Zscaler, un éditeur de solutions Zero Trust.</span></li>
+    <li><span><b>Sa limite.</b> L'ANSSI recommande une adoption maîtrisée et progressive, pour ne pas affaiblir le système d'information ni donner un faux sentiment de sécurité.</span></li>
+    <li><span><b>Pourquoi je l'ai choisi.</b> C'est un sujet d'actualité qui touche directement mon domaine, le réseau et la sécurité. Il remplace peu à peu le VPN (Virtual Private Network, le tunnel chiffré classique), et il est lié à mes projets : la segmentation par VLAN de mon TP et le durcissement du serveur Rocky.</span></li>
+   </ol></div>
   <div class="glass veille-conclusion"><h3>Ma méthode</h3>
    <ol class="steps">
     <li><span><b>Je collecte.</b> Avec Feedly (un outil qui rassemble les articles de plusieurs sites au même endroit) et LinkedIn, pour suivre les acteurs du secteur. J'ajoute les sites de Zscaler, Cisco et Check Point.</span></li>
@@ -316,9 +313,29 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
     <li><span><b>Je classe.</b> Mes notes sont rangées par date.</span></li>
     <li><span><b>Je suis le juridique.</b> La CNIL, l'ANSSI (Agence nationale de la sécurité des systèmes d'information) et l'Union européenne, car mes projets touchent aux données personnelles et à la sécurité.</span></li>
    </ol></div>
-  <div class="glass veille-conclusion"><h3>Le lien avec mes projets</h3>
-   <div class="two" style="margin:0"><div><h4>Dans mon TP</h4><p>Tout est refusé par défaut, sauf le poste enseignant : c'est le moindre privilège. Les VLAN séparent les réseaux : c'est la segmentation, une idée centrale du Zero Trust.</p></div>
-   <div><h4>Sur le serveur Rocky</h4><p>Je réduis la surface d'attaque avec des mots de passe stricts, de l'audit, des services inutiles désactivés et un SSH limité. Je prends un snapshot à chaque étape, pour pouvoir revenir en arrière.</p></div></div></div>
+  <div class="track" id="t-veille">
+   <div class="glass slide"><span class="chip">Zscaler · mars 2026</span><p class="num">84 %</p><p>des organisations prévoient de passer au Zero Trust ou le font déjà (78 % deux ans plus tôt).</p><a class="alink" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">Zscaler · mars 2026</span><p class="num">61 %</p><p>ont subi des attaques utilisant l'IA (intelligence artificielle), confirmées ou soupçonnées, en 12 mois.</p><a class="alink" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">Zscaler · mars 2026</span><p class="num">77 %</p><p>disent ne pas pouvoir contenir un déplacement latéral après une compromission.</p><a class="alink" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">Check Point · avril 2026</span><h3>L'industrie en tête</h3><p>Le secteur manufacturier était le plus visé par les ransomwares en 2025, selon Check Point.</p><a class="alink" href="https://itbrief.co.uk/story/manufacturing-leads-ransomware-targets-in-2025-report" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">NSA · source officielle</span><h3>Des guides officiels en 2026</h3><p>Les Zero Trust Implementation Guidelines (janvier 2026) donnent des étapes concrètes. Une page interactive a été lancée le 28 mai 2026.</p><a class="alink" href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496862/nsa-launches-zero-trust-implementation-guidelines-resource-webpage/" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">ANSSI · source officielle</span><h3>Une adoption progressive</h3><p>L'ANSSI conseille d'adopter le Zero Trust de façon maîtrisée et progressive, pour ne pas affaiblir le système d'information ni donner un faux sentiment de sécurité.</p><a class="alink" href="https://cyber.gouv.fr/en/publications/zero-trust-model" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">NIST · source officielle</span><h3>La définition de référence</h3><p>Le Zero Trust resserre la défense : des grands périmètres réseau vers des ressources individuelles ou de petits groupes de ressources.</p><a class="alink" href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+  </div>
+  <div class="ctrl"><button class="icon-btn" data-t="t-veille" data-d="-1" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button><button class="icon-btn" data-t="t-veille" data-d="1" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button></div>
+  <div class="glass veille-conclusion"><h3>Mes articles</h3><div class="docs-list">
+   <a class="doc" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener"><span>Zscaler, AI Machine Speed is Breaking VPN Security (mars 2026)</span><em>Ouvrir ↗</em></a>
+   <a class="doc" href="https://itbrief.co.uk/story/manufacturing-leads-ransomware-targets-in-2025-report" target="_blank" rel="noopener"><span>Check Point, le secteur manufacturier et le ransomware en 2025 (avril 2026)</span><em>Ouvrir ↗</em></a>
+   <a class="doc" href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496862/nsa-launches-zero-trust-implementation-guidelines-resource-webpage/" target="_blank" rel="noopener"><span>NSA, Zero Trust Implementation Guidelines (mai 2026)</span><em>Ouvrir ↗</em></a>
+   <a class="doc" href="https://cyber.gouv.fr/en/publications/zero-trust-model" target="_blank" rel="noopener"><span>ANSSI, Modèle Zero Trust (juin 2025)</span><em>Ouvrir ↗</em></a>
+   <a class="doc" href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener"><span>NIST, SP 800-207 Zero Trust Architecture (2020)</span><em>Ouvrir ↗</em></a>
+  </div></div>
+  <div class="glass info-card" style="margin-top:24px"><h3>Le lien avec mes projets</h3>
+   <ol class="steps">
+    <li><span><b>Mon TP.</b> Tout est refusé par défaut, et j'autorise seulement le poste enseignant : c'est le moindre privilège. Les VLAN séparent les réseaux : c'est la segmentation, une idée centrale du Zero Trust.</span></li>
+    <li><span><b>Le serveur Rocky.</b> Je réduis la surface d'attaque avec des mots de passe stricts, de l'audit, des services inutiles désactivés et un SSH limité. Je prends un snapshot à chaque étape, pour pouvoir revenir en arrière.</span></li>
+   </ol>
+   <p>Ce n'est pas un Zero Trust complet, mais j'applique ses principes à mon échelle.</p></div>
  </div>
 </section>
 
