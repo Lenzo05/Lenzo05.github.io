@@ -394,7 +394,7 @@ function art(k){var A="var(--a)",B="var(--b)",C="#f97362",M="rgba(150,170,210,.3
  return v+'</svg>'}
 function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
 function defify(el){el.innerHTML=el.innerHTML.replace(/\(([^()]*)\)/g,'<span class="def">($1)</span>')}
-function show(h){document.getElementById("dbody").innerHTML=h;document.querySelectorAll('#dbody li, #dbody p').forEach(defify);if(!dlg.open)dlg.showModal()}
+function show(h){document.getElementById("dbody").innerHTML=h;if(!dlg.open)dlg.showModal()}
 function imgFail(im){var g=im.closest(".gal");im.remove();if(g&&!g.children.length){var h=g.previousElementSibling;if(h&&h.tagName==="H4")h.remove();g.remove()}}
 function openP(k){var p=P[k],h='<h2>'+esc(p.t)+'</h2>';
  if(p.chips)h+='<div class="project-tags">'+p.chips.map(function(c){return'<span class="tag">'+esc(c)+'</span>'}).join("")+'</div>';
