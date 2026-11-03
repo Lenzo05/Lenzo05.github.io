@@ -134,6 +134,19 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 .steps li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-weight:700;font-size:13px}
 .term{background:#050914;border:1px solid var(--gb);border-radius:12px;padding:14px;font:13px/1.7 ui-monospace,Consolas,monospace;color:#cfe3ff;overflow-x:auto;white-space:pre}
 .def{color:var(--muted);font-size:.88em;font-weight:400}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cert-grid .slide{flex:none;min-width:0;overflow:hidden}
+.slide h3,.slide p{overflow-wrap:anywhere}
+.marquee{margin-top:36px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:mq 45s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.mgroup{display:flex;gap:18px;padding-right:18px}
+.marquee img{height:180px;width:auto;flex:none;border-radius:12px;border:1px solid var(--gb);background:#fff;cursor:zoom-in}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (max-width:900px){.cert-grid{grid-template-columns:1fr}.marquee img{height:140px}}
+.docs-list{display:grid;gap:6px}
+.alink{font-size:13px;font-weight:600;color:var(--a)}
+.alink:hover{text-decoration:underline}
 .gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:0}
 .gloss div{padding:10px 14px;border:1px solid var(--gb);border-radius:10px}
 .gloss dt{font-weight:700;color:var(--b);font-size:14px}
@@ -159,7 +172,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 @media (max-width:960px){.projects-grid{grid-template-columns:1fr 1fr}.hero-content,.about-content,.parcours-content{grid-template-columns:1fr}.photo{max-width:320px}.footer-container{grid-template-columns:1fr}}
 @media (max-width:860px){.hamburger{display:flex}.nav-menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:12px 24px;border-bottom:1px solid var(--gb)}.nav-menu.open{display:flex}}
 @media (max-width:600px){.projects-grid,.contact-content-centered{grid-template-columns:1fr}.hero-name{font-size:40px}.section-title{font-size:30px}section{padding:56px 0}}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.marquee-track{animation:none}.marquee{overflow-x:auto}}
 </style>
 </head>
 <body>
@@ -215,12 +228,12 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 <section id="certifications">
  <div class="container">
   <h2 class="section-title">Certifications</h2>
-  <div class="track" id="t-cert">
-   <div class="glass slide"><img class="cert-logo" alt="Cisco" data-f="logo-cisco"><span class="chip">Cisco NetAcad</span><h3>Plus de 100 h</h3><p>Cisco NetAcad (Networking Academy, la formation réseau officielle de Cisco) : 4 modules de 22 h, Packet Tracer (2 h) et support réseau (12 h).</p><div class="cert-gal"><img class="cert-img" alt="Certificat Cisco" data-f="cisco-certificat,cisco-certificate,cisco-certificats"><img class="cert-img" alt="Cisco Packet Tracer" data-f="cisco-packet-tracer"></div></div>
-   <div class="glass slide"><img class="cert-logo" alt="CNIL" data-f="logo-cnil"><span class="chip">CNIL · 29/05/2025</span><h3>MOOC RGPD</h3><p>MOOC (Massive Open Online Course, une formation en ligne ouverte) de la CNIL (Commission Nationale de l'Informatique et des Libertés), qui fait respecter le RGPD (Règlement Général sur la Protection des Données, la loi européenne sur les données personnelles). Module 1 : 93 %, module 2 : 82 %, module 3 : 93 %.</p><div class="cert-gal"><img class="cert-img" alt="CNIL module 1" data-f="cnil-module1"><img class="cert-img" alt="CNIL module 2" data-f="cnil-module2"><img class="cert-img" alt="CNIL module 3" data-f="cnil-module3"></div></div>
-   <div class="glass slide"><img class="cert-logo" alt="PIX" data-f="logo-pix"><span class="chip">PIX</span><h3>Compétences numériques</h3><p>PIX : la certification publique des compétences numériques. Recherche et analyse niveau 6, résolution technique 4, publication numérique 4, sécurisation 2.</p><div class="cert-gal"><img class="cert-img" alt="Score PIX" data-f="pix-score"></div></div>
+  <div class="cert-grid">
+   <div class="glass slide"><img class="cert-logo" alt="Cisco" data-f="logo-cisco"><span class="chip">Cisco NetAcad</span><h3>Plus de 100 h</h3><p>Cisco NetAcad (Networking Academy, la formation réseau officielle de Cisco) : 4 modules de 22 h, Packet Tracer (2 h) et support réseau (12 h).</p></div>
+   <div class="glass slide"><img class="cert-logo" alt="CNIL" data-f="logo-cnil"><span class="chip">CNIL · 29/05/2025</span><h3>MOOC RGPD</h3><p>MOOC (Massive Open Online Course, une formation en ligne ouverte) de la CNIL (Commission Nationale de l'Informatique et des Libertés), qui fait respecter le RGPD (Règlement Général sur la Protection des Données, la loi européenne sur les données personnelles). Module 1 : 93 %, module 2 : 82 %, module 3 : 93 %.</p></div>
+   <div class="glass slide"><img class="cert-logo" alt="PIX" data-f="logo-pix"><span class="chip">PIX</span><h3>Compétences numériques</h3><p>PIX : la certification publique des compétences numériques. Recherche et analyse niveau 6, résolution technique 4, publication numérique 4, sécurisation 2.</p></div>
   </div>
-  <div class="ctrl"><button class="icon-btn" data-t="t-cert" data-d="-1" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button><button class="icon-btn" data-t="t-cert" data-d="1" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button></div>
+  <div class="marquee" id="cmq" aria-label="Mes attestations, défilement horizontal"><div class="marquee-track" id="cmt"></div></div>
  </div>
 </section>
 
@@ -231,17 +244,17 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
    <div class="parcours-column">
     <h3><i class="fas fa-graduation-cap"></i> Formation</h3>
     <div class="timeline">
-     <div class="timeline-item"><div class="glass timeline-card"><h4>BTS SIO (Services Informatiques aux Organisations) option SISR</h4><span class="when">2025 - 2027</span><p>Lycée Dick Ukeiwe, Nouméa. Solutions d'infrastructure, systèmes et réseaux, en alternance.</p><img class="cert-img" alt="Lycée Dick Ukeiwe" data-f="lycee" style="aspect-ratio:16/7;margin-top:8px"></div></div>
-     <div class="timeline-item"><div class="glass timeline-card"><h4>Bac STMG option SIG</h4><span class="when">2024</span><p>Lycée Dick Ukeiwe. STMG (Sciences et Technologies du Management et de la Gestion), option SIG (Systèmes d'Information de Gestion).</p></div></div>
-     <div class="timeline-item"><div class="glass timeline-card"><h4>Brevet des collèges</h4><span class="when">2021</span><p>Collège de Tuband.</p></div></div>
+     <div class="timeline-item"><div class="glass timeline-card"><h4>BTS SIO option SISR</h4><span class="when">2025 - 2027</span><img class="cert-img" alt="Lycée Dick Ukeiwe" data-f="lycee" style="aspect-ratio:16/7;margin-top:8px"></div></div>
+     <div class="timeline-item"><div class="glass timeline-card"><h4>Bac STMG option SIG</h4><span class="when">2024</span></div></div>
+     <div class="timeline-item"><div class="glass timeline-card"><h4>Brevet des collèges</h4><span class="when">2021</span></div></div>
     </div>
    </div>
    <div class="parcours-column">
     <h3><i class="fas fa-briefcase"></i> Expérience</h3>
     <div class="timeline">
-     <div class="timeline-item exp"><div class="glass timeline-card"><img class="cert-logo" alt="BCI" data-f="logo-bci"><h4>Alternant, Pôle Infrastructure</h4><span class="when">2025 - 2027 · BCI</span><p>Pool BUILD (il construit les projets et gère le niveau 3), sous-service PDT (Poste De Travail). Support N1/N2, déploiement de postes avec l'image entreprise, imprimantes, matériel pour les agences. Le pool RUN, lui, exploite la production.</p><img class="cert-img" alt="BCI" data-f="bci" style="aspect-ratio:16/7;margin-top:8px"></div></div>
-     <div class="timeline-item exp"><div class="glass timeline-card"><h4>Stage</h4><span class="when">27 octobre - 28 novembre 2025 · BCI</span><p>Obtenu après un speed-meeting étudiants-entreprises, il a débouché sur l'alternance. Missions : procédures et guides utilisateurs, déploiement de postes, support Helpdesk N1/N2, imprimantes et maintenance du parc.</p></div></div>
-     <div class="timeline-item exp"><div class="glass timeline-card"><h4>Stage de découverte en cuisine</h4><span class="when">Avant l'informatique</span><p>Je voulais devenir cuisinier. Ce stage m'a plu et m'a appris le rythme, l'anticipation et le travail d'équipe.</p></div></div>
+     <div class="timeline-item exp"><div class="glass timeline-card"><img class="cert-logo" alt="BCI" data-f="logo-bci"><h4>Alternant, Pôle Infrastructure</h4><span class="when">2025 - 2027 · BCI</span><img class="cert-img" alt="BCI" data-f="bci" style="aspect-ratio:16/7;margin-top:8px"></div></div>
+     <div class="timeline-item exp"><div class="glass timeline-card"><h4>Stage</h4><span class="when">27 octobre - 28 novembre 2025 · BCI</span></div></div>
+     <div class="timeline-item exp"><div class="glass timeline-card"><h4>Stage de découverte en cuisine</h4><span class="when">Avant l'informatique</span></div></div>
     </div>
    </div>
   </div>
@@ -281,13 +294,20 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
   <h2 class="section-title">Veille technologique</h2>
   <div class="veille-subtitle"><h3>Le Zero Trust</h3><p>Ne jamais faire confiance par défaut, toujours vérifier. Le moindre privilège, c'est donner seulement les droits nécessaires. Suivi depuis avril 2026.</p></div>
   <div class="track" id="t-veille">
-   <div class="glass slide"><span class="chip">Zscaler</span><p class="num">65 %</p><p>des entreprises veulent remplacer leur VPN (Virtual Private Network, le tunnel chiffré classique).</p></div>
-   <div class="glass slide"><span class="chip">Zscaler</span><p class="num">81 %</p><p>prévoient de mettre en place le Zero Trust.</p></div>
-   <div class="glass slide"><span class="chip">Zscaler</span><p class="num">+427 %</p><p>d'attaques assistées par IA (intelligence artificielle) contre les VPN.</p></div>
-   <div class="glass slide"><span class="chip">SecurityWeek</span><p class="num">207 jours</p><p>sans IA : période de référence citée dans l'étude.</p></div>
-   <div class="glass slide"><span class="chip">Check Point</span><p class="num">29 %</p><p>des attaques ciblent l'industrie. Solution citée : segmenter les réseaux IT (informatique) et OT (technologies opérationnelles).</p></div>
+   <div class="glass slide"><span class="chip">Zscaler</span><p class="num">65 %</p><p>des entreprises prévoient de remplacer leur VPN (Virtual Private Network, le tunnel chiffré classique) dans l'année.</p><a class="alink" href="https://www.zscaler.com/fr/press/zscaler-threatlabz-2025-vpn-risk-report-over-half-organizations-say-security-and-compliance" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">Zscaler</span><p class="num">81 %</p><p>prévoient de mettre en place le Zero Trust dans les 12 mois.</p><a class="alink" href="https://www.zscaler.com/fr/press/zscaler-threatlabz-2025-vpn-risk-report-over-half-organizations-say-security-and-compliance" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+      <div class="glass slide"><span class="chip">IBM · 2022</span><p class="num">207 jours</p><p>en moyenne pour identifier une violation de données, selon l'étude IBM Cost of a Data Breach 2022.</p><a class="alink" href="https://ibm.com/downloads/cas/3R8N1DZJ" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">IBM · 2022</span><p class="num">41 %</p><p>des organisations déploient une architecture Zero Trust. Les autres paient en moyenne environ 1 million de dollars de plus en cas de violation.</p><a class="alink" href="https://ibm.com/downloads/cas/3R8N1DZJ" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+   <div class="glass slide"><span class="chip">Check Point Research</span><p class="num">29 %</p><p>des incidents de ransomware déclarés en 2025 visaient le secteur industriel. Solution citée : segmenter les réseaux IT (informatique) et OT (technologies opérationnelles).</p><a class="alink" href="https://brandsit.pl/?p=1974427" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+      <div class="glass slide"><span class="chip">eGroup</span><h3>Une attaque par IA renforce le Zero Trust</h3><p>Selon l'article, un incident avec un agent IA autonome montre que l'IA accélère des techniques d'attaque connues. Les organisations qui appliquent le Zero Trust sont mieux protégées.</p><a class="alink" href="https://egroup-us.com/news/ai-cyberattack-zero-trust-lessons/" target="_blank" rel="noopener">Lire l'article ↗</a></div>
   </div>
   <div class="ctrl"><button class="icon-btn" data-t="t-veille" data-d="-1" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button><button class="icon-btn" data-t="t-veille" data-d="1" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button></div>
+  <div class="glass veille-conclusion"><h3>Mes articles</h3><div class="docs-list">
+   <a class="doc" href="https://www.zscaler.com/fr/press/zscaler-threatlabz-2025-vpn-risk-report-over-half-organizations-say-security-and-compliance" target="_blank" rel="noopener"><span>Zscaler ThreatLabz, 2025 VPN Risk Report</span><em>Ouvrir ↗</em></a>
+   <a class="doc" href="https://ibm.com/downloads/cas/3R8N1DZJ" target="_blank" rel="noopener"><span>IBM, Cost of a Data Breach 2022</span><em>Ouvrir ↗</em></a>
+   <a class="doc" href="https://brandsit.pl/?p=1974427" target="_blank" rel="noopener"><span>Check Point Research, le secteur industriel et le Zero Trust</span><em>Ouvrir ↗</em></a>
+      <a class="doc" href="https://egroup-us.com/news/ai-cyberattack-zero-trust-lessons/" target="_blank" rel="noopener"><span>eGroup, ce que l'incident OpenAI et Hugging Face enseigne sur le Zero Trust</span><em>Ouvrir ↗</em></a>
+  </div></div>
   <div class="glass veille-conclusion"><h3>Ma méthode</h3><p>Feedly pour centraliser les flux, LinkedIn pour suivre les acteurs, sites éditeurs (Zscaler, Cisco, SecurityWeek, Check Point). Consultation chaque vendredi, notes classées par date. Côté juridique : CNIL, ANSSI (Agence nationale de la sécurité des systèmes d'information) et Union européenne.</p></div>
   <div class="glass veille-conclusion"><h3>Le lien avec mes projets</h3><p>Dans mon TP de la semaine 32, tout est refusé par défaut, sauf le poste enseignant. Sur le serveur Rocky, c'est la même logique : un compte de service limité, de l'audit, un SSH restreint et une sécurisation par étapes.</p></div>
  </div>
@@ -406,6 +426,9 @@ var rg=document.getElementById("rgrid");
 R.forEach(function(r){var d=document.createElement("div");d.className="glass real-card";d.innerHTML='<div class="real-ico"><i class="fas '+r[3]+'"></i><img alt="Preuve : '+esc(r[1])+'"></div><span class="chip tag">'+r[2]+'</span><h4>'+esc(r[1])+'</h4>';rg.appendChild(d);var im=d.querySelector("img");find(im,"preuve-"+r[0]);im.addEventListener("click",function(){lbi.src=im.src;lbd.showModal()})});
 document.getElementById('lexg').innerHTML=LEX.map(function(g){return'<div><dt>'+esc(g[0])+'</dt><dd>'+esc(g[1])+'</dd></div>'}).join('');
 document.querySelectorAll('.hero-description, .about-text p, .timeline-card p, .slide p, .info-card p, .info-card li span, .veille-subtitle p, .veille-conclusion p').forEach(defify);
+/* attestations : escalator horizontal */
+(function(){var N=[["cisco-certificat,cisco-certificate,cisco-certificats","Certificat Cisco"],["cisco-packet-tracer","Cisco Packet Tracer"],["cnil-module1","CNIL module 1"],["cnil-module2","CNIL module 2"],["cnil-module3","CNIL module 3"],["pix-score","Score PIX"]],t=document.getElementById("cmt");
+for(var k=0;k<2;k++){var g=document.createElement("div");g.className="mgroup";N.forEach(function(n){var im=document.createElement("img");im.alt=n[1];g.appendChild(im);find(im,n[0]);im.addEventListener("click",function(){lbi.src=im.src;lbd.showModal()})});t.appendChild(g)}})();
 /* mentions légales et confidentialité */
 function legal(k){var L=[["Mentions légales","<h4>ÉDITEUR</h4><p>Lenzo TOLUAFE, étudiant en BTS SIO option SISR, Nouméa, Nouvelle-Calédonie. Contact : lenzotoluafe1@gmail.com. Site pédagogique et personnel, non commercial.</p><h4>HÉBERGEMENT</h4><p>GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p><h4>PROPRIÉTÉ INTELLECTUELLE</h4><p>Les contenus de ce site sont ma création, sauf mention contraire. Les marques citées appartiennent à leurs propriétaires.</p><h4>ENTREPRISES CITÉES</h4><p>La BCI et TechForm NC sont citées à titre de parcours personnel et pédagogique. Ce site ne publie aucune donnée interne ni confidentielle.</p>"],["Confidentialité","<h4>DONNÉES COLLECTÉES</h4><p>Ce site ne collecte aucune donnée et n'utilise aucun cookie de suivi.</p><h4>STOCKAGE LOCAL</h4><p>Ton navigateur peut mémoriser ton choix de thème clair ou sombre. Cette donnée reste sur ton appareil.</p><h4>TES DROITS</h4><p>Conformément au RGPD, tu peux demander l'accès, la rectification ou la suppression de toute donnée transmise par e-mail, à lenzotoluafe1@gmail.com. Tu peux aussi saisir la CNIL.</p>"]][k];show("<h2>"+L[0]+"</h2>"+L[1])}
 
