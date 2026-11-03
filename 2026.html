@@ -150,6 +150,66 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 .cert-list{padding-left:18px;display:grid;gap:5px;font-size:14px;color:var(--muted)}
 .alink{font-size:13px;font-weight:600;color:var(--a)}
 .alink:hover{text-decoration:underline}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.flow span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid var(--gb);background:var(--glass);font-weight:600;font-size:14px}
+.flow span b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-size:12px;font-weight:700}
+.ticket{display:flex;justify-content:space-between;align-items:center;gap:24px;width:100%;padding:24px 28px;margin-bottom:24px;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.ticket:hover{border-color:var(--b);transform:translateY(-3px)}
+.ticket h3{margin:10px 0}
+.ticket .big{font-size:34px;font-weight:800;white-space:nowrap;background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ticket .big em{font-style:normal}
+@media (max-width:700px){.ticket{flex-direction:column;align-items:flex-start}.ticket .big{font-size:28px}}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cert-card,.pillar,.source{display:grid;gap:8px;align-content:start;text-align:left;padding:24px;cursor:pointer;font:inherit;color:inherit}
+.cert-card:hover,.pillar:hover,.source:hover{border-color:var(--b)}
+.cert-card h3,.pillar h3{font-size:22px}
+.cert-card .cfull{font-size:14px}
+.cert-card .cgoal{color:var(--ink);font-weight:600}
+.cert-card .tag-learn-more,.pillar .tag-learn-more,.source .tag-learn-more{justify-self:start;margin-top:4px}
+.pillar>i{font-size:26px;color:var(--b)}
+.pillar p{font-size:15px}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sub-h{margin:44px 0 18px;font-size:22px}
+.source{padding:20px}
+.source .snum{font-size:34px;font-weight:800;line-height:1.1;background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.source p{font-size:14px}
+.snum-big{font-size:48px!important;font-weight:800;line-height:1.1;background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent!important}
+@media (max-width:1000px){.cards4{grid-template-columns:1fr 1fr}.cards3,.cert-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.cards4,.cards3,.cert-grid{grid-template-columns:1fr}}
+.spot{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(520px circle at var(--sx,50%) var(--sy,30%),rgba(34,211,238,.10),transparent 60%)}
+.bg-blobs{transition:filter .4s}
+.hero{position:relative;overflow:hidden}
+.hero-name>span{display:block;animation:focusIn 1.1s cubic-bezier(.22,1,.36,1) both}
+.hero-name>span:last-child{animation-delay:.25s}
+@keyframes focusIn{from{opacity:0;filter:blur(18px);letter-spacing:.28em}to{opacity:1;filter:blur(0);letter-spacing:-.03em}}
+.waves{position:absolute;left:0;bottom:-2px;width:200%;height:150px;pointer-events:none;animation:wv 26s linear infinite;opacity:.55}
+.waves.w2{height:120px;opacity:.35;animation-duration:38s;animation-direction:reverse}
+@keyframes wv{to{transform:translateX(-50%)}}
+.project-card,.real-card,.cert-card,.pillar,.source,.ticket{transition:transform .18s ease,border-color .2s;will-change:transform}
+.real-card{cursor:pointer}
+.real-card:hover{border-color:var(--b);transform:translateY(-4px)}
+.real-card .tag-learn-more{justify-self:start}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(1200px 600px at 50% -10%,rgba(79,140,255,.10),transparent 60%);pointer-events:none}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--a),var(--b),#8b5cf6)}
+.blob{animation:drift 24s ease-in-out infinite alternate}
+.blob-2{animation-duration:30s;animation-delay:-8s}
+.blob-3{animation-duration:36s;animation-delay:-14s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,-40px) scale(1.14)}}
+.section-title::after{content:"";display:block;width:64px;height:4px;border-radius:4px;margin:14px auto 0;background:linear-gradient(90deg,var(--a),var(--b))}
+.glass{position:relative}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(79,140,255,.13),transparent 45%);opacity:0;transition:opacity .35s;pointer-events:none}
+.glass:hover::before{opacity:1}
+.strip{padding:0 0 30px}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{padding:22px 18px;text-align:center}
+.stat b{display:block;font-size:40px;font-weight:800;line-height:1.1;background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--muted)}
+.photo{box-shadow:0 0 0 1px var(--gb),0 24px 70px rgba(79,140,255,.28)}
+.reveal{opacity:0}
+.reveal.in{opacity:1;animation:rv .75s cubic-bezier(.22,1,.36,1) backwards}
+@keyframes rv{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@media (max-width:700px){.stat-row{grid-template-columns:1fr 1fr}.stat b{font-size:32px}}
 .gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:0}
 .gloss div{padding:10px 14px;border:1px solid var(--gb);border-radius:10px}
 .gloss dt{font-weight:700;color:var(--b);font-size:14px}
@@ -175,17 +235,19 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 @media (max-width:960px){.projects-grid{grid-template-columns:1fr 1fr}.hero-content,.about-content,.parcours-content{grid-template-columns:1fr}.photo{max-width:320px}.footer-container{grid-template-columns:1fr}}
 @media (max-width:860px){.hamburger{display:flex}.nav-menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:12px 24px;border-bottom:1px solid var(--gb)}.nav-menu.open{display:flex}}
 @media (max-width:600px){.projects-grid,.contact-content-centered{grid-template-columns:1fr}.hero-name{font-size:40px}.section-title{font-size:30px}section{padding:56px 0}}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.marquee-track{animation:none}.marquee{overflow-x:auto}}
+@media (prefers-reduced-motion:reduce){.blob,.reveal.in,.waves,.hero-name>span{animation:none!important}.reveal{opacity:1!important}*{scroll-behavior:auto!important;transition:none!important}.marquee-track{animation:none}.marquee{overflow-x:auto}}
 </style>
 </head>
 <body>
+<div class="spot"></div>
+<div id="prog"></div>
 <div class="bg-blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
 
 <nav class="navbar">
  <div class="nav-container">
   <a href="#home" class="nav-logo">L.<b>TOLUAFE</b></a>
   <ul class="nav-menu" id="menu">
-   <li><a class="nav-link" href="#home">Accueil</a></li><li><a class="nav-link" href="#about">À propos</a></li><li><a class="nav-link" href="#certifications">Certifications</a></li><li><a class="nav-link" href="#parcours">Parcours</a></li><li><a class="nav-link" href="#projects">Projets</a></li><li><a class="nav-link" href="#realisations">Réalisations</a></li><li><a class="nav-link" href="#veille">Veille</a></li><li><a class="nav-link" href="#contact">Contact</a></li>
+   <li><a class="nav-link" href="#home">Accueil</a></li><li><a class="nav-link" href="#about">À propos</a></li><li><a class="nav-link" href="#parcours">Parcours</a></li><li><a class="nav-link" href="#certifications">Certifications</a></li><li><a class="nav-link" href="#realisations">Réalisations</a></li><li><a class="nav-link" href="#projects">Projets</a></li><li><a class="nav-link" href="#veille">Veille</a></li><li><a class="nav-link" href="#contact">Contact</a></li>
    <li><button class="icon-btn" id="theme" aria-label="Changer de thème"><i class="fas fa-moon"></i></button></li>
   </ul>
   <button class="hamburger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -205,7 +267,16 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
   </div>
   <div class="photo"><span>LT</span><img id="pimg" alt="Lenzo Toluafe"></div>
  </div>
-</section>
+  <svg class="waves w1" viewBox="0 0 2880 160" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wgw1" x1="0" x2="1"><stop offset="0" style="stop-color:var(--a)"/><stop offset="1" style="stop-color:var(--b)"/></linearGradient></defs><path d="M0,80.0 L40,84.5 L80,88.9 L120,93.0 L160,96.7 L200,99.9 L240,102.5 L280,104.4 L320,105.6 L360,106.0 L400,105.6 L440,104.4 L480,102.5 L520,99.9 L560,96.7 L600,93.0 L640,88.9 L680,84.5 L720,80.0 L760,75.5 L800,71.1 L840,67.0 L880,63.3 L920,60.1 L960,57.5 L1000,55.6 L1040,54.4 L1080,54.0 L1120,54.4 L1160,55.6 L1200,57.5 L1240,60.1 L1280,63.3 L1320,67.0 L1360,71.1 L1400,75.5 L1440,80.0 L1480,84.5 L1520,88.9 L1560,93.0 L1600,96.7 L1640,99.9 L1680,102.5 L1720,104.4 L1760,105.6 L1800,106.0 L1840,105.6 L1880,104.4 L1920,102.5 L1960,99.9 L2000,96.7 L2040,93.0 L2080,88.9 L2120,84.5 L2160,80.0 L2200,75.5 L2240,71.1 L2280,67.0 L2320,63.3 L2360,60.1 L2400,57.5 L2440,55.6 L2480,54.4 L2520,54.0 L2560,54.4 L2600,55.6 L2640,57.5 L2680,60.1 L2720,63.3 L2760,67.0 L2800,71.1 L2840,75.5 L2880,80.0 L2880,160 L0,160 Z" fill="url(#wgw1)"/></svg>
+  <svg class="waves w2" viewBox="0 0 2880 160" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wgw2" x1="0" x2="1"><stop offset="0" style="stop-color:var(--a)"/><stop offset="1" style="stop-color:var(--b)"/></linearGradient></defs><path d="M0,96.2 L40,93.9 L80,91.2 L120,88.1 L160,84.8 L200,81.4 L240,77.9 L280,74.5 L320,71.2 L360,68.2 L400,65.6 L440,63.4 L480,61.7 L520,60.6 L560,60.0 L600,60.1 L640,60.8 L680,62.0 L720,63.8 L760,66.1 L800,68.8 L840,71.9 L880,75.2 L920,78.6 L960,82.1 L1000,85.5 L1040,88.8 L1080,91.8 L1120,94.4 L1160,96.6 L1200,98.3 L1240,99.4 L1280,100.0 L1320,99.9 L1360,99.2 L1400,98.0 L1440,96.2 L1480,93.9 L1520,91.2 L1560,88.1 L1600,84.8 L1640,81.4 L1680,77.9 L1720,74.5 L1760,71.2 L1800,68.2 L1840,65.6 L1880,63.4 L1920,61.7 L1960,60.6 L2000,60.0 L2040,60.1 L2080,60.8 L2120,62.0 L2160,63.8 L2200,66.1 L2240,68.8 L2280,71.9 L2320,75.2 L2360,78.6 L2400,82.1 L2440,85.5 L2480,88.8 L2520,91.8 L2560,94.4 L2600,96.6 L2640,98.3 L2680,99.4 L2720,100.0 L2760,99.9 L2800,99.2 L2840,98.0 L2880,96.2 L2880,160 L0,160 Z" fill="url(#wgw2)"/></svg>
+ </section>
+
+<section class="strip"><div class="container"><div class="stat-row">
+   <div class="stat glass"><b data-count="100">0</b><span>heures de formation réseau Cisco</span></div>
+   <div class="stat glass"><b data-count="3">0</b><span>certifications : Cisco, CNIL et PIX</span></div>
+   <div class="stat glass"><b data-count="6">0</b><span>phases pour durcir un serveur Rocky Linux</span></div>
+   <div class="stat glass"><b data-count="2">0</b><span>projets documentés</span></div>
+  </div></div></section>
 
 <section id="about">
  <div class="container">
@@ -224,18 +295,6 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
     <div class="skill-cards-grid" id="skills"></div>
    </div>
   </div>
- </div>
-</section>
-
-<section id="certifications">
- <div class="container">
-  <h2 class="section-title">Certifications</h2>
-  <div class="cert-grid">
-   <div class="glass slide"><img class="cert-logo" alt="Cisco" data-f="logo-cisco"><span class="chip">Cisco NetAcad</span><h3>Plus de 100 h</h3><p class="why"><b>C'est quoi.</b> La Networking Academy, la formation réseau officielle de Cisco.</p><p class="why"><b>Ce que j'ai appris.</b></p><ul class="cert-list"><li>Comment un réseau fonctionne : les appareils s'échangent des données en suivant des règles communes, les protocoles.</li><li>L'adressage IP : le protocole IP (Internet Protocol) donne une adresse à chaque appareil, comme l'adresse d'une maison, pour envoyer les données au bon endroit.</li><li>L'accès au réseau : comment un appareil se connecte, par câble Ethernet (le réseau filaire) ou en wifi, à un switch (le boîtier qui relie les appareils).</li><li>Packet Tracer : le simulateur de Cisco, pour construire et tester un réseau virtuel, sans matériel et sans risque.</li><li>Le support réseau : trouver la cause d'une panne, du plus simple au plus complexe.</li></ul><p class="why"><b>Pourquoi je l'ai passée.</b> C'est un standard reconnu dans le monde entier, et elle me donne les bases pour la suite, comme la certification CCNA.</p><p class="why"><b>En quoi c'est important.</b> Le réseau est au cœur de mon métier. Ce que j'ai appris me sert dans mes TP (VLAN, ACL) et dans mes tickets, comme la lenteur d'Internet.</p></div>
-   <div class="glass slide"><img class="cert-logo" alt="CNIL" data-f="logo-cnil"><span class="chip">CNIL · 29/05/2025</span><h3>MOOC RGPD</h3><p class="why"><b>C'est quoi.</b> Un MOOC (Massive Open Online Course, une formation en ligne ouverte) de la CNIL (Commission Nationale de l'Informatique et des Libertés), qui fait respecter le RGPD.</p><p class="why"><b>Ce que j'ai appris.</b></p><ul class="cert-list"><li>Le RGPD (Règlement Général sur la Protection des Données) : la loi européenne qui protège les données personnelles.</li><li>Une donnée personnelle : toute information qui permet d'identifier une personne, comme un nom, une adresse ou un numéro de compte.</li><li>Les principes : ne collecter que le nécessaire, pour un but précis, et protéger les données.</li><li>Les responsabilités : qui doit faire quoi quand on traite des données personnelles.</li></ul><p class="why"><b>Pourquoi je l'ai passée.</b> Travailler en banque m'expose à des données sensibles. Comprendre le RGPD est indispensable.</p><p class="why"><b>En quoi c'est important.</b> Un technicien a accès à des postes, des comptes et des données. Il doit savoir ce qu'il peut faire et ne pas faire. C'est pour ça que je ne publie aucune donnée interne de la BCI.</p></div>
-   <div class="glass slide"><img class="cert-logo" alt="PIX" data-f="logo-pix"><span class="chip">PIX</span><h3>Compétences numériques</h3><p class="why"><b>C'est quoi.</b> La certification publique des compétences numériques.</p><p class="why"><b>Ce que j'ai appris.</b></p><ul class="cert-list"><li>Rechercher et analyser : trouver une information et vérifier qu'elle est fiable (niveau 6).</li><li>Résoudre un problème technique : régler une panne sur un outil numérique (niveau 4).</li><li>Publier : créer et diffuser du contenu en ligne (niveau 4).</li><li>Se protéger : sécuriser ses appareils et ses données, avec des mots de passe solides et des mises à jour (niveau 2).</li></ul><p class="why"><b>Pourquoi je l'ai passée.</b> Elle est obligatoire dans le BTS, et elle est utile sur un CV.</p><p class="why"><b>En quoi c'est important.</b> Elle prouve mes compétences numériques de base, par une certification publique. Mon niveau le plus faible est la sécurisation, que je veux travailler avec la cybersécurité.</p></div>
-  </div>
-  <div class="marquee" id="cmq" aria-label="Mes attestations, défilement horizontal"><div class="marquee-track" id="cmt"></div></div>
  </div>
 </section>
 
@@ -263,10 +322,15 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
  </div>
 </section>
 
-<section id="projects">
+<section id="certifications">
  <div class="container">
-  <h2 class="section-title">Mes projets</h2>
-  <div class="projects-grid" id="pgrid"></div>
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-grid">
+   <button class="glass cert-card" type="button" onclick="openC('cisco')"><img class="cert-logo" alt="Cisco" data-f="logo-cisco"><h3>Cisco NetAcad</h3><p class="cfull">Cisco Networking Academy</p><p class="cgoal">Apprendre les bases du réseau</p><span class="tag tag-learn-more">En savoir plus...</span></button>
+   <button class="glass cert-card" type="button" onclick="openC('cnil')"><img class="cert-logo" alt="CNIL" data-f="logo-cnil"><h3>MOOC RGPD</h3><p class="cfull">Massive Open Online Course, par la CNIL</p><p class="cgoal">Protéger les données personnelles</p><span class="tag tag-learn-more">En savoir plus...</span></button>
+   <button class="glass cert-card" type="button" onclick="openC('pix')"><img class="cert-logo" alt="PIX" data-f="logo-pix"><h3>PIX</h3><p class="cfull">Certification publique des compétences numériques</p><p class="cgoal">Prouver mes compétences numériques</p><span class="tag tag-learn-more">En savoir plus...</span></button>
+  </div>
+  <div class="marquee" id="cmq" aria-label="Mes attestations, défilement horizontal"><div class="marquee-track" id="cmt"></div></div>
  </div>
 </section>
 
@@ -275,19 +339,26 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
   <h2 class="section-title">Autres réalisations</h2>
   <p class="veille-subtitle">Mes autres réalisations en formation et en alternance.</p>
   <div class="two">
-   <div class="glass info-card"><h3>Mon alternance à la BCI</h3><p>Je travaille dans le pool BUILD (il construit les projets et gère le niveau 3, par opposition au pool RUN, qui exploite la production au quotidien), au sous-service PDT (Poste De Travail, les postes des utilisateurs).</p><p>Je fais du support niveau 1 et niveau 2 (niveau 1 : accueil de la demande, niveau 2 : expertise) avec les tickets ServiceNow (un outil d'ITSM, IT Service Management, la gestion des services informatiques). Je déploie des postes avec l'image entreprise (un système déjà préconfiguré). Je gère les imprimantes. Je prépare le matériel pour les agences.</p></div>
-   <div class="glass info-card"><h3>Ma méthode de diagnostic</h3><ol class="steps"><li>Le physique (câble, alimentation)</li><li>Le réseau</li><li>Le logiciel</li><li>Les droits</li></ol><p>Je diagnostique toujours du plus simple au plus complexe. Je documente chaque cas dans le ticket, pour que n'importe qui puisse refaire la même chose.</p></div>
+   <div class="glass info-card"><h3>Mon alternance à la BCI</h3>
+    <p>Je travaille dans le pool BUILD (il construit les projets et gère le niveau 3, par opposition au pool RUN, qui exploite la production), au sous-service PDT (Poste De Travail, les postes des utilisateurs).</p>
+    <p>Je fais du support niveau 1 et 2, je déploie des postes, je gère les imprimantes et je prépare le matériel pour les agences.</p></div>
+   <div class="glass info-card"><h3>Ma méthode de diagnostic</h3>
+    <div class="flow"><span><b>1</b>Le physique</span><span><b>2</b>Le réseau</span><span><b>3</b>Le logiciel</span><span><b>4</b>Les droits</span></div>
+    <p>Toujours du plus simple au plus complexe. Je documente chaque cas dans le ticket, pour que n'importe qui puisse refaire la même chose.</p></div>
   </div>
-  <div class="glass info-card" style="margin-bottom:24px"><h3>Exemple de ticket, lenteur d'Internet</h3>
-   <ol class="steps">
-    <li><span><b>Le problème.</b> Une utilisatrice signale une lenteur du réseau quand elle navigue sur Internet. Un collègue est allé voir et n'a rien trouvé d'anormal.</span></li>
-    <li><span><b>Ma prise en main.</b> Je lui ai proposé mon aide et je lui ai demandé ce qu'il avait vérifié : le débit, le câble branché sur le deuxième port Ethernet (la technologie des réseaux filaires), le remplacement du téléphone IP (un téléphone qui passe par le réseau). Il n'avait encore rien testé de tout ça. Le téléphone IP est branché sur le port Ethernet et relié jusqu'au boîtier Dell, qui lui donne la connexion.</span></li>
-    <li><span><b>Mon diagnostic.</b> J'ai pris le ticket en charge et je suis allé sur place. J'ai commencé par le plus simple, le physique. J'ai vérifié le câble : c'était bien un câble de catégorie 6 (adapté au gigabit). Je l'ai quand même remplacé, mais le débit restait à 100 Mb/s. J'ai alors branché le câble sur le deuxième port.</span></li>
-    <li><span><b>Le résultat.</b> Le débit est passé de 100 Mb/s (mégabits par seconde) à 1 Gb/s (gigabit par seconde). Le problème venait donc du port utilisé, pas du câble. L'incident était réglé et j'ai clôturé le ticket.</span></li>
-   </ol>
-   <p>Ce que j'en retiens : on élimine les causes une par une. Ici, le câble était bon, donc le problème venait du port.</p></div>
+  <button class="glass ticket" type="button" onclick="openTicket()">
+   <div><span class="chip tag">Exemple de ticket</span><h3>Lenteur d'Internet réglée en changeant de port</h3><span class="tag tag-learn-more">En savoir plus...</span></div>
+   <div class="big">100 Mb/s <em>→</em> 1 Gb/s</div>
+  </button>
   <div class="real-grid" id="rgrid"></div>
   <details class="glass lex"><summary>Sigles de ma formation et de mon alternance</summary><dl class="gloss" id="lexg"></dl></details>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <h2 class="section-title">Mes projets</h2>
+  <div class="projects-grid" id="pgrid"></div>
  </div>
 </section>
 
@@ -295,47 +366,14 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
  <div class="container">
   <h2 class="section-title">Veille technologique</h2>
   <div class="veille-subtitle"><h3>Le Zero Trust</h3><p>Ma veille porte sur le Zero Trust, depuis avril 2026. Le principe est de ne jamais faire confiance par défaut, de toujours vérifier et de donner le moindre privilège (seulement les droits nécessaires). Selon Zscaler en 2026, 84 % des organisations prévoient de passer au Zero Trust ou le font déjà.</p></div>
-  <div class="glass info-card" style="margin-bottom:24px"><h3>Le Zero Trust, en bref</h3>
-   <ol class="steps">
-    <li><span><b>La définition.</b> Le Zero Trust est un modèle de sécurité où aucun utilisateur et aucun appareil n'est considéré comme digne de confiance par défaut, même à l'intérieur du réseau. Chaque accès doit être vérifié.</span></li>
-    <li><span><b>En quoi ça consiste.</b> Ne jamais faire confiance par défaut, vérifier chaque accès (qui demande, avec quel appareil) et donner le moindre privilège, c'est-à-dire seulement les droits nécessaires. On y ajoute la segmentation : séparer les réseaux pour limiter ce qu'un utilisateur ou un attaquant peut atteindre.</span></li>
-    <li><span><b>Pourquoi c'est bien.</b> Le réseau d'une entreprise n'a plus de frontière nette, avec le télétravail, le cloud et les appareils partout. Faire confiance à tout ce qui est « à l'intérieur » ne suffit plus.</span></li>
-    <li><span><b>Ses avantages.</b> Une surface d'attaque plus petite, un attaquant qui se déplace moins facilement dans le réseau (le déplacement latéral) et des données mieux protégées. Cette liste vient de Zscaler, un éditeur de solutions Zero Trust.</span></li>
-    <li><span><b>Sa limite.</b> L'ANSSI recommande une adoption maîtrisée et progressive, pour ne pas affaiblir le système d'information ni donner un faux sentiment de sécurité.</span></li>
-    <li><span><b>Pourquoi je l'ai choisi.</b> C'est un sujet d'actualité qui touche directement mon domaine, le réseau et la sécurité. Il remplace peu à peu le VPN (Virtual Private Network, le tunnel chiffré classique), et il est lié à mes projets : la segmentation par VLAN de mon TP et le durcissement du serveur Rocky.</span></li>
-   </ol></div>
-  <div class="glass veille-conclusion"><h3>Ma méthode</h3>
-   <ol class="steps">
-    <li><span><b>Je collecte.</b> Avec Feedly (un outil qui rassemble les articles de plusieurs sites au même endroit) et LinkedIn, pour suivre les acteurs du secteur. J'ajoute les sites de Zscaler, Cisco et Check Point.</span></li>
-    <li><span><b>Je consulte.</b> Chaque vendredi matin, à heure fixe.</span></li>
-    <li><span><b>Je trie.</b> Je garde seulement ce qui parle du Zero Trust et de la sécurité réseau.</span></li>
-    <li><span><b>J'analyse.</b> Je résume chaque article en trois points : quoi, qui, quel impact.</span></li>
-    <li><span><b>Je classe.</b> Mes notes sont rangées par date.</span></li>
-    <li><span><b>Je suis le juridique.</b> La CNIL, l'ANSSI (Agence nationale de la sécurité des systèmes d'information) et l'Union européenne, car mes projets touchent aux données personnelles et à la sécurité.</span></li>
-   </ol></div>
-  <div class="track" id="t-veille">
-   <div class="glass slide"><span class="chip">Zscaler · mars 2026</span><p class="num">84 %</p><p>des organisations prévoient de passer au Zero Trust ou le font déjà (78 % deux ans plus tôt).</p><a class="alink" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-   <div class="glass slide"><span class="chip">Zscaler · mars 2026</span><p class="num">61 %</p><p>ont subi des attaques utilisant l'IA (intelligence artificielle), confirmées ou soupçonnées, en 12 mois.</p><a class="alink" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-   <div class="glass slide"><span class="chip">Zscaler · mars 2026</span><p class="num">77 %</p><p>disent ne pas pouvoir contenir un déplacement latéral après une compromission.</p><a class="alink" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-   <div class="glass slide"><span class="chip">Check Point · avril 2026</span><h3>L'industrie en tête</h3><p>Le secteur manufacturier était le plus visé par les ransomwares en 2025, selon Check Point.</p><a class="alink" href="https://itbrief.co.uk/story/manufacturing-leads-ransomware-targets-in-2025-report" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-   <div class="glass slide"><span class="chip">NSA · source officielle</span><h3>Des guides officiels en 2026</h3><p>Les Zero Trust Implementation Guidelines (janvier 2026) donnent des étapes concrètes. Une page interactive a été lancée le 28 mai 2026.</p><a class="alink" href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496862/nsa-launches-zero-trust-implementation-guidelines-resource-webpage/" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-   <div class="glass slide"><span class="chip">ANSSI · source officielle</span><h3>Une adoption progressive</h3><p>L'ANSSI conseille d'adopter le Zero Trust de façon maîtrisée et progressive, pour ne pas affaiblir le système d'information ni donner un faux sentiment de sécurité.</p><a class="alink" href="https://cyber.gouv.fr/en/publications/zero-trust-model" target="_blank" rel="noopener">Lire l'article ↗</a></div>
-   <div class="glass slide"><span class="chip">NIST · source officielle</span><h3>La définition de référence</h3><p>Le Zero Trust resserre la défense : des grands périmètres réseau vers des ressources individuelles ou de petits groupes de ressources.</p><a class="alink" href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener">Lire l'article ↗</a></div>
+  <div class="cards3">
+   <button class="glass pillar" type="button" onclick="openV('def')"><i class="fas fa-lightbulb"></i><h3>C'est quoi le Zero Trust ?</h3><p>Ne jamais faire confiance par défaut</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass pillar" type="button" onclick="openV('good')"><i class="fas fa-thumbs-up"></i><h3>Pourquoi c'est bien</h3><p>Le réseau n'a plus de frontière nette</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass pillar" type="button" onclick="openV('limit')"><i class="fas fa-exclamation-triangle"></i><h3>Sa limite</h3><p>Une adoption progressive</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass pillar" type="button" onclick="openV('choice')"><i class="fas fa-bullseye"></i><h3>Pourquoi je l'ai choisi</h3><p>Réseau, sécurité et mes projets</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass pillar" type="button" onclick="openV('method')"><i class="fas fa-tasks"></i><h3>Ma méthode</h3><p>Collecter, trier, analyser, classer</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass pillar" type="button" onclick="openV('link')"><i class="fas fa-project-diagram"></i><h3>Le lien avec mes projets</h3><p>Mon TP et le serveur Rocky</p><span class="tag tag-learn-more">En savoir plus...</span></button>
   </div>
-  <div class="ctrl"><button class="icon-btn" data-t="t-veille" data-d="-1" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button><button class="icon-btn" data-t="t-veille" data-d="1" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button></div>
-  <div class="glass veille-conclusion"><h3>Mes articles</h3><div class="docs-list">
-   <a class="doc" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener"><span>Zscaler, AI Machine Speed is Breaking VPN Security (mars 2026)</span><em>Ouvrir ↗</em></a>
-   <a class="doc" href="https://itbrief.co.uk/story/manufacturing-leads-ransomware-targets-in-2025-report" target="_blank" rel="noopener"><span>Check Point, le secteur manufacturier et le ransomware en 2025 (avril 2026)</span><em>Ouvrir ↗</em></a>
-   <a class="doc" href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496862/nsa-launches-zero-trust-implementation-guidelines-resource-webpage/" target="_blank" rel="noopener"><span>NSA, Zero Trust Implementation Guidelines (mai 2026)</span><em>Ouvrir ↗</em></a>
-   <a class="doc" href="https://cyber.gouv.fr/en/publications/zero-trust-model" target="_blank" rel="noopener"><span>ANSSI, Modèle Zero Trust (juin 2025)</span><em>Ouvrir ↗</em></a>
-   <a class="doc" href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener"><span>NIST, SP 800-207 Zero Trust Architecture (2020)</span><em>Ouvrir ↗</em></a>
-  </div></div>
-  <div class="glass info-card" style="margin-top:24px"><h3>Le lien avec mes projets</h3>
-   <ol class="steps">
-    <li><span><b>Mon TP.</b> Tout est refusé par défaut, et j'autorise seulement le poste enseignant : c'est le moindre privilège. Les VLAN séparent les réseaux : c'est la segmentation, une idée centrale du Zero Trust.</span></li>
-    <li><span><b>Le serveur Rocky.</b> Je réduis la surface d'attaque avec des mots de passe stricts, de l'audit, des services inutiles désactivés et un SSH limité. Je prends un snapshot à chaque étape, pour pouvoir revenir en arrière.</span></li>
-   </ol>
-   <p>Ce n'est pas un Zero Trust complet, mais j'applique ses principes à mon échelle.</p></div>
+  <h3 class="sub-h">Mes sources</h3>
+  <div class="cards4">
+   <button class="glass source" type="button" onclick="openS(0)"><span class="chip tag">Zscaler · mars 2026</span><b class="snum">84 %</b><p>passent au Zero Trust ou le font déjà</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass source" type="button" onclick="openS(1)"><span class="chip tag">Zscaler · mars 2026</span><b class="snum">61 %</b><p>ont subi des attaques par IA</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass source" type="button" onclick="openS(2)"><span class="chip tag">Zscaler · mars 2026</span><b class="snum">77 %</b><p>ne peuvent pas contenir un déplacement latéral</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass source" type="button" onclick="openS(3)"><span class="chip tag">Check Point · avril 2026</span><b class="snum">Industrie</b><p>secteur le plus visé par les ransomwares</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass source" type="button" onclick="openS(4)"><span class="chip tag">NSA · source officielle</span><b class="snum">2026</b><p>des guides pour appliquer le Zero Trust</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass source" type="button" onclick="openS(5)"><span class="chip tag">ANSSI · source officielle</span><b class="snum">ANSSI</b><p>une adoption maîtrisée et progressive</p><span class="tag tag-learn-more">En savoir plus...</span></button><button class="glass source" type="button" onclick="openS(6)"><span class="chip tag">NIST · source officielle</span><b class="snum">NIST</b><p>la définition de référence</p><span class="tag tag-learn-more">En savoir plus...</span></button>
+  </div>
+  <details class="glass lex"><summary>Tous mes liens</summary><div class="docs-list" style="padding:0 20px 20px"><a class="doc" href="https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security" target="_blank" rel="noopener"><span>Zscaler, AI Machine Speed is Breaking VPN Security (mars 2026)</span><em>Ouvrir ↗</em></a><a class="doc" href="https://itbrief.co.uk/story/manufacturing-leads-ransomware-targets-in-2025-report" target="_blank" rel="noopener"><span>Check Point, le secteur manufacturier et le ransomware en 2025 (avril 2026)</span><em>Ouvrir ↗</em></a><a class="doc" href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496862/nsa-launches-zero-trust-implementation-guidelines-resource-webpage/" target="_blank" rel="noopener"><span>NSA, Zero Trust Implementation Guidelines (mai 2026)</span><em>Ouvrir ↗</em></a><a class="doc" href="https://cyber.gouv.fr/en/publications/zero-trust-model" target="_blank" rel="noopener"><span>ANSSI, Modèle Zero Trust (juin 2025)</span><em>Ouvrir ↗</em></a><a class="doc" href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener"><span>NIST, SP 800-207 Zero Trust Architecture (2020)</span><em>Ouvrir ↗</em></a></div></details>
  </div>
 </section>
 
@@ -450,10 +488,29 @@ function cover(im,k,first){var c=['png','jpg','jpeg','webp'].map(function(e){ret
 /* images de certifications et logos : cherche dans Images/, Images/certifications/, certifications/ et à la racine */
 function find(im,names){var bs=['Images/','Images/certifications/','certifications/',''],es=['png','jpg','jpeg','webp'],c=[];names.split(',').forEach(function(n){bs.forEach(function(b){es.forEach(function(e){c.push(b+n+'.'+e)})})});var i=0;im.onerror=function(){if(i>=c.length){im.remove()}else im.src=c[i++]};im.onerror()}
 document.querySelectorAll('img[data-f]').forEach(function(im){find(im,im.dataset.f);if(im.classList.contains('cert-img'))im.addEventListener('click',function(){lbi.src=im.src;lbd.showModal()})});
+function openTicket(){show('<h2>Exemple de ticket, lenteur d\'Internet</h2><div class="project-tags"><span class="tag">Support N1/N2</span><span class="tag">Réseau</span><span class="tag">Diagnostic</span></div><ol class="steps"><li><span><b>Le problème.</b> Une utilisatrice signale une lenteur du réseau quand elle navigue sur Internet. Un collègue est allé voir et n\'a rien trouvé d\'anormal.</span></li><li><span><b>Ma prise en main.</b> Je lui ai proposé mon aide et je lui ai demandé ce qu\'il avait vérifié : le débit, le câble branché sur le deuxième port Ethernet (la technologie des réseaux filaires), le remplacement du téléphone IP (un téléphone qui passe par le réseau). Il n\'avait encore rien testé de tout ça. Le téléphone IP est branché sur le port Ethernet et relié jusqu\'au boîtier Dell, qui lui donne la connexion.</span></li><li><span><b>Mon diagnostic.</b> J\'ai pris le ticket en charge et je suis allé sur place. J\'ai commencé par le plus simple, le physique. J\'ai vérifié le câble : c\'était bien un câble de catégorie 6 (adapté au gigabit). Je l\'ai quand même remplacé, mais le débit restait à 100 Mb/s. J\'ai alors branché le câble sur le deuxième port.</span></li><li><span><b>Le résultat.</b> Le débit est passé de 100 Mb/s (mégabits par seconde) à 1 Gb/s (gigabit par seconde). Le problème venait donc du port utilisé, pas du câble. L\'incident était réglé et j\'ai clôturé le ticket.</span></li></ol><h4>CE QUE J\'EN RETIENS</h4><p>On élimine les causes une par une. Ici, le câble était bon, donc le problème venait du port.</p>')}
+var C={"cisco": {"t": "Cisco NetAcad", "chips": ["Plus de 100 h", "Réseau"], "what": "La Networking Academy, la formation réseau officielle de Cisco.", "learn": ["Comment un réseau fonctionne : les appareils s'échangent des données en suivant des règles communes, les protocoles.", "L'adressage IP : le protocole IP (Internet Protocol) donne une adresse à chaque appareil, comme l'adresse d'une maison, pour envoyer les données au bon endroit.", "L'accès au réseau : comment un appareil se connecte, par câble Ethernet (le réseau filaire) ou en wifi, à un switch (le boîtier qui relie les appareils).", "Packet Tracer : le simulateur de Cisco, pour construire et tester un réseau virtuel, sans matériel et sans risque.", "Le support réseau : trouver la cause d'une panne, du plus simple au plus complexe."], "why": "C'est un standard reconnu dans le monde entier, et elle me donne les bases pour la suite, comme la certification CCNA.", "imp": "Le réseau est au cœur de mon métier. Ce que j'ai appris me sert dans mes TP (VLAN, ACL) et dans mes tickets, comme la lenteur d'Internet."}, "cnil": {"t": "MOOC RGPD", "chips": ["CNIL · 29/05/2025", "Données personnelles"], "what": "Un MOOC (Massive Open Online Course, une formation en ligne ouverte) de la CNIL (Commission Nationale de l'Informatique et des Libertés), qui fait respecter le RGPD.", "learn": ["Le RGPD (Règlement Général sur la Protection des Données) : la loi européenne qui protège les données personnelles.", "Une donnée personnelle : toute information qui permet d'identifier une personne, comme un nom, une adresse ou un numéro de compte.", "Les principes : ne collecter que le nécessaire, pour un but précis, et protéger les données.", "Les responsabilités : qui doit faire quoi quand on traite des données personnelles."], "why": "Travailler en banque m'expose à des données sensibles. Comprendre le RGPD est indispensable.", "imp": "Un technicien a accès à des postes, des comptes et des données. Il doit savoir ce qu'il peut faire et ne pas faire. C'est pour ça que je ne publie aucune donnée interne de la BCI."}, "pix": {"t": "PIX", "chips": ["Certification publique", "Compétences numériques"], "what": "La certification publique des compétences numériques.", "learn": ["Rechercher et analyser : trouver une information et vérifier qu'elle est fiable (niveau 6).", "Résoudre un problème technique : régler une panne sur un outil numérique (niveau 4).", "Publier : créer et diffuser du contenu en ligne (niveau 4).", "Se protéger : sécuriser ses appareils et ses données, avec des mots de passe solides et des mises à jour (niveau 2)."], "why": "Elle est obligatoire dans le BTS, et elle est utile sur un CV.", "imp": "Elle prouve mes compétences numériques de base, par une certification publique. Mon niveau le plus faible est la sécurisation, que je veux travailler avec la cybersécurité."}};
+var V={"def": {"t": "C'est quoi le Zero Trust ?", "ic": "fa-lightbulb", "short": "Ne jamais faire confiance par défaut", "blocks": [["LA DÉFINITION", "p", "Le Zero Trust est un modèle de sécurité où aucun utilisateur et aucun appareil n'est considéré comme digne de confiance par défaut, même à l'intérieur du réseau. Chaque accès doit être vérifié."], ["EN QUOI ÇA CONSISTE", "ul", ["Ne jamais faire confiance par défaut.", "Vérifier chaque accès : qui demande, avec quel appareil.", "Donner le moindre privilège, c'est-à-dire seulement les droits nécessaires.", "Segmenter : séparer les réseaux pour limiter ce qu'un utilisateur ou un attaquant peut atteindre."]]]}, "good": {"t": "Pourquoi c'est bien", "ic": "fa-thumbs-up", "short": "Le réseau n'a plus de frontière nette", "blocks": [["POURQUOI C'EST BIEN", "p", "Le réseau d'une entreprise n'a plus de frontière nette, avec le télétravail, le cloud et les appareils partout. Faire confiance à tout ce qui est « à l'intérieur » ne suffit plus."], ["SES AVANTAGES", "ul", ["Une surface d'attaque plus petite.", "Un attaquant qui se déplace moins facilement dans le réseau (le déplacement latéral).", "Des données mieux protégées."]], ["À SAVOIR", "p", "Cette liste d'avantages vient de Zscaler, un éditeur de solutions Zero Trust."]]}, "limit": {"t": "Sa limite", "ic": "fa-exclamation-triangle", "short": "Une adoption progressive", "blocks": [["SA LIMITE", "p", "L'ANSSI recommande une adoption maîtrisée et progressive, pour ne pas affaiblir le système d'information ni donner un faux sentiment de sécurité."]], "link": ["https://cyber.gouv.fr/en/publications/zero-trust-model", "Lire la publication de l'ANSSI"]}, "choice": {"t": "Pourquoi je l'ai choisi", "ic": "fa-bullseye", "short": "Réseau, sécurité et mes projets", "blocks": [["POURQUOI CE THÈME", "p", "C'est un sujet d'actualité qui touche directement mon domaine, le réseau et la sécurité. Il remplace peu à peu le VPN (Virtual Private Network, le tunnel chiffré classique), et il est lié à mes projets : la segmentation par VLAN de mon TP et le durcissement du serveur Rocky."]]}, "method": {"t": "Ma méthode", "ic": "fa-tasks", "short": "Collecter, trier, analyser, classer", "steps": ["**Je collecte.** Avec Feedly (un outil qui rassemble les articles de plusieurs sites au même endroit) et LinkedIn, pour suivre les acteurs du secteur. J'ajoute les sites de Zscaler, Cisco et Check Point.", "**Je consulte.** Chaque vendredi matin, à heure fixe.", "**Je trie.** Je garde seulement ce qui parle du Zero Trust et de la sécurité réseau.", "**J'analyse.** Je résume chaque article en trois points : quoi, qui, quel impact.", "**Je classe.** Mes notes sont rangées par date.", "**Je suis le juridique.** Je lis aussi la CNIL, l'ANSSI (Agence nationale de la sécurité des systèmes d'information) et l'Union européenne, car mes projets touchent aux données personnelles et à la sécurité."]}, "link": {"t": "Le lien avec mes projets", "ic": "fa-project-diagram", "short": "Mon TP et le serveur Rocky", "steps": ["**Mon TP.** Tout est refusé par défaut, et j'autorise seulement le poste enseignant : c'est le moindre privilège. Les VLAN séparent les réseaux : c'est la segmentation, une idée centrale du Zero Trust.", "**Le serveur Rocky.** Je réduis la surface d'attaque avec des mots de passe stricts, de l'audit, des services inutiles désactivés et un SSH limité. Je prends un snapshot à chaque étape, pour pouvoir revenir en arrière."], "after": "Ce n'est pas un Zero Trust complet, mais j'applique ses principes à mon échelle."}};
+var S=[{"chip": "Zscaler · mars 2026", "num": "84 %", "short": "passent au Zero Trust ou le font déjà", "d": "84 % des organisations prévoient de passer au Zero Trust ou le font déjà, contre 78 % deux ans plus tôt. C'est une enquête auprès de 822 professionnels de l'informatique et de la cybersécurité, commanditée par un éditeur de solutions Zero Trust.", "u": "https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security", "l": "Lire l'article de Zscaler"}, {"chip": "Zscaler · mars 2026", "num": "61 %", "short": "ont subi des attaques par IA", "d": "61 % des organisations ont subi, ou soupçonnent, des attaques utilisant l'IA (intelligence artificielle) au cours des 12 derniers mois.", "u": "https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security", "l": "Lire l'article de Zscaler"}, {"chip": "Zscaler · mars 2026", "num": "77 %", "short": "ne peuvent pas contenir un déplacement latéral", "d": "77 % des organisations disent ne pas pouvoir contenir un déplacement latéral après une compromission : c'est le fait, pour un attaquant, de se déplacer de machine en machine dans le réseau.", "u": "https://www.zscaler.com/blogs/company-news/ai-machine-speed-breaking-vpn-security", "l": "Lire l'article de Zscaler"}, {"chip": "Check Point · avril 2026", "num": "Industrie", "short": "secteur le plus visé par les ransomwares", "d": "Selon Check Point, le secteur manufacturier était le plus visé par les ransomwares en 2025. Un ransomware est un logiciel qui bloque les données d'une organisation pour réclamer une rançon. Le lien mène à un article de presse qui reprend l'analyse.", "u": "https://itbrief.co.uk/story/manufacturing-leads-ransomware-targets-in-2025-report", "l": "Lire l'article"}, {"chip": "NSA · source officielle", "num": "2026", "short": "des guides pour appliquer le Zero Trust", "d": "Les Zero Trust Implementation Guidelines de la NSA (janvier 2026) donnent des étapes concrètes pour appliquer le Zero Trust. Une page web interactive a été lancée le 28 mai 2026.", "u": "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496862/nsa-launches-zero-trust-implementation-guidelines-resource-webpage/", "l": "Lire le communiqué de la NSA"}, {"chip": "ANSSI · source officielle", "num": "ANSSI", "short": "une adoption maîtrisée et progressive", "d": "Dans son modèle Zero Trust (juin 2025), l'ANSSI conseille d'adopter le Zero Trust de façon maîtrisée et progressive, pour ne pas affaiblir le système d'information ni donner un faux sentiment de sécurité.", "u": "https://cyber.gouv.fr/en/publications/zero-trust-model", "l": "Lire la publication de l'ANSSI"}, {"chip": "NIST · source officielle", "num": "NIST", "short": "la définition de référence", "d": "La publication NIST SP 800-207 (2020) est la définition de référence : le Zero Trust resserre la défense, de grands périmètres réseau vers des ressources individuelles ou de petits groupes de ressources.", "u": "https://csrc.nist.gov/pubs/sp/800/207/final", "l": "Lire la publication du NIST"}];
+function tg(a){return'<div class="project-tags">'+a.map(function(c){return'<span class="tag">'+esc(c)+'</span>'}).join("")+'</div>'}
+function bl(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>')}
+function openC(k){var c=C[k];show('<h2>'+esc(c.t)+'</h2>'+tg(c.chips)+'<p><b>C\'est quoi.</b> '+esc(c.what)+'</p><h4>CE QUE J\'AI APPRIS</h4><ul>'+c.learn.map(function(x){return'<li>'+esc(x)+'</li>'}).join("")+'</ul><h4>POURQUOI JE L\'AI PASSÉE</h4><p>'+esc(c.why)+'</p><h4>EN QUOI C\'EST IMPORTANT</h4><p>'+esc(c.imp)+'</p>')}
+function openV(k){var v=V[k],h='<h2>'+esc(v.t)+'</h2>';
+ (v.blocks||[]).forEach(function(b){h+='<h4>'+esc(b[0])+'</h4>'+(b[1]==="ul"?'<ul>'+b[2].map(function(x){return'<li>'+esc(x)+'</li>'}).join("")+'</ul>':'<p>'+esc(b[2])+'</p>')});
+ if(v.steps)h+='<ol class="steps">'+v.steps.map(function(x){return'<li><span>'+bl(x)+'</span></li>'}).join("")+'</ol>';
+ if(v.after)h+='<p>'+esc(v.after)+'</p>';
+ if(v.link)h+='<a class="doc" href="'+v.link[0]+'" target="_blank" rel="noopener"><span>'+esc(v.link[1])+'</span><em>Ouvrir ↗</em></a>';
+ show(h)}
+function openS(i){var d=S[i];show('<h2>'+esc(d.chip)+'</h2><p class="snum-big">'+esc(d.num)+'</p><p>'+esc(d.d)+'</p><a class="doc" href="'+d.u+'" target="_blank" rel="noopener"><span>'+esc(d.l)+'</span><em>Ouvrir ↗</em></a>')}
+/* missions : fenêtre au clic */
+var M={"helpdesk": {"t": "Support Helpdesk N1/N2", "chips": ["Stage et alternance", "ServiceNow", "Plusieurs agences"], "d": "Je prends en charge les demandes des utilisateurs de la BCI, dans plusieurs agences. N1 et N2 veulent dire niveau 1 (l'accueil de la demande) et niveau 2 (l'expertise). Je traite les tickets dans ServiceNow, un outil d'ITSM (IT Service Management, la gestion des services informatiques).", "l": ["Je traite les tickets, de la prise en charge à la clôture.", "Je diagnostique les incidents applicatifs.", "J'assiste les utilisateurs de plusieurs agences."], "extra": [["MA MÉTHODE", "Je diagnostique du plus simple au plus complexe : le physique, puis le réseau, le logiciel et les droits. Je documente chaque cas dans le ticket, pour que n'importe qui puisse refaire la même chose."], ["UN EXEMPLE", "Une lenteur d'Internet réglée en déplaçant le câble sur un autre port. Le débit est passé de 100 Mb/s à 1 Gb/s."]], "why": "Le support est le premier contact des utilisateurs avec l'informatique. Un bon diagnostic fait gagner du temps à tout le monde."}, "deploiement": {"t": "Déploiement de postes de travail", "chips": ["Stage et alternance", "Image entreprise"], "d": "Je prépare et je déploie des postes de travail pour les utilisateurs de la BCI, à partir de l'image entreprise, c'est-à-dire un système déjà préconfiguré.", "l": ["J'installe l'image entreprise sur le poste.", "Je configure le matériel.", "Je suis une procédure de déploiement, que j'ai aussi rédigée."], "why": "Des postes tous préparés de la même façon sont plus faciles à dépanner et à sécuriser."}, "procedures": {"t": "Rédaction de procédures techniques", "chips": ["Stage et alternance", "Documentation"], "d": "Je rédige des procédures et des guides pour que quelqu'un d'autre puisse refaire la même opération sans moi.", "l": ["Une procédure de déploiement d'un PC.", "Une procédure pour une application métier.", "Des guides utilisateurs, pour la prise en main des applications, des ordinateurs, des imprimantes et des téléphones IP (pendant le stage)."], "why": "Une procédure claire évite les erreurs, fait gagner du temps et transmet le savoir-faire dans l'équipe."}, "imprimantes": {"t": "Gestion des imprimantes", "chips": ["Stage et alternance"], "d": "Je m'occupe des imprimantes des utilisateurs : je les configure, je les mets à jour et je les dépanne.", "l": ["Configuration : installer et paramétrer l'imprimante.", "Mise à jour : la maintenir à jour pour qu'elle fonctionne bien.", "Dépannage : trouver la cause d'une panne et la corriger."], "why": "Une imprimante en panne bloque souvent le travail d'une équipe."}, "maintenance": {"t": "Maintenance générale et gestion du parc", "chips": ["Stage et alternance"], "d": "Je participe à la maintenance générale et à la gestion du parc informatique de la BCI, pendant mon stage puis mon alternance.", "l": ["La maintenance, c'est garder les postes et le matériel en bon état de fonctionnement.", "La gestion du parc, c'est savoir quel matériel existe et où il se trouve."], "why": "Un parc bien suivi évite les pannes et les achats inutiles."}, "agences": {"t": "Préparation du matériel pour les agences", "chips": ["Alternance", "Renouvellement des agences"], "d": "J'ai préparé du matériel pour le renouvellement des agences de la BCI, de juin à août 2026.", "l": ["Je prépare et je configure des postes de travail pour les agences en cours de renouvellement.", "Le but est que le matériel soit prêt à être mis en place."], "why": "Un renouvellement bien préparé permet aux agences de continuer à travailler sans interruption."}, "recuperation": {"t": "Réparation et récupération des PC cassés", "chips": ["Alternance", "Réemploi"], "d": "Je répare des PC cassés et je récupère des pièces réutilisables.", "l": ["Je répare des PC cassés.", "Je récupère des pièces sur des PC cassés.", "Je prépare du matériel destiné au don."], "why": "Réutiliser des pièces évite de racheter du matériel, et le don donne une seconde vie aux appareils."}};
+function openM(k){var m=M[k];if(!m)return;var h='<h2>'+esc(m.t)+'</h2><div class="project-tags">'+m.chips.map(function(c){return'<span class="tag">'+esc(c)+'</span>'}).join("")+'</div><p>'+esc(m.d)+'</p><h4>CE QUE JE FAIS</h4><ul>'+m.l.map(function(x){return'<li>'+esc(x)+'</li>'}).join("")+'</ul>';
+ (m.extra||[]).forEach(function(x){h+='<h4>'+esc(x[0])+'</h4><p>'+esc(x[1])+'</p>'});
+ h+='<h4>POURQUOI C\'EST IMPORTANT</h4><p>'+esc(m.why)+'</p>';show(h)}
 /* autres réalisations (preuves : Images/preuve-<clé>.png) */
 var R=[["helpdesk","Support Helpdesk N1/N2 à la BCI (niveaux 1 et 2, tickets ServiceNow, diagnostic, assistance multi-agences)","Stage et alternance","fa-headset"],["deploiement","Déploiement de postes de travail (image entreprise, configuration du matériel)","Stage et alternance","fa-laptop"],["procedures","Rédaction de procédures techniques (déploiement d'un PC, application métier)","Stage et alternance","fa-file-alt"],["imprimantes","Gestion des imprimantes (configuration, mise à jour, dépannage)","Stage et alternance","fa-print"],["maintenance","Maintenance générale et gestion du parc informatique","Stage et alternance","fa-tools"],["agences","Préparation du matériel pour le renouvellement des agences","Alternance","fa-building"],["recuperation","Réparation et récupération des PC cassés","Alternance","fa-wrench"]];
 var rg=document.getElementById("rgrid");
-R.forEach(function(r){var d=document.createElement("div");d.className="glass real-card";d.innerHTML='<div class="real-ico"><i class="fas '+r[3]+'"></i><img alt="Preuve : '+esc(r[1])+'"></div><span class="chip tag">'+r[2]+'</span><h4>'+esc(r[1])+'</h4>';rg.appendChild(d);var im=d.querySelector("img");find(im,"preuve-"+r[0]);im.addEventListener("click",function(){lbi.src=im.src;lbd.showModal()})});
+R.forEach(function(r){var d=document.createElement("div");d.className="glass real-card";d.innerHTML='<div class="real-ico"><i class="fas '+r[3]+'"></i><img alt="Preuve : '+esc(r[1])+'"></div><span class="chip tag">'+r[2]+'</span><h4>'+esc(r[1])+'</h4><span class="tag tag-learn-more">En savoir plus...</span>';d.tabIndex=0;d.setAttribute("role","button");d.addEventListener("click",function(){openM(r[0])});d.addEventListener("keydown",function(e){if(e.key==="Enter")openM(r[0])});rg.appendChild(d);var im=d.querySelector("img");find(im,"preuve-"+r[0]);im.addEventListener("click",function(e){e.stopPropagation();lbi.src=im.src;lbd.showModal()})});
 document.getElementById('lexg').innerHTML=LEX.map(function(g){return'<div><dt>'+esc(g[0])+'</dt><dd>'+esc(g[1])+'</dd></div>'}).join('');
 document.querySelectorAll('.hero-description, .about-text p, .timeline-card p, .slide p, .slide li, .info-card p, .info-card li span, .veille-subtitle p, .veille-conclusion p, .veille-conclusion li span').forEach(defify);
 /* attestations : escalator horizontal */
@@ -462,6 +519,28 @@ for(var k=0;k<2;k++){var g=document.createElement("div");g.className="mgroup";N.
 /* mentions légales et confidentialité */
 function legal(k){var L=[["Mentions légales","<h4>ÉDITEUR</h4><p>Lenzo TOLUAFE, étudiant en BTS SIO option SISR, Nouméa, Nouvelle-Calédonie. Contact : lenzotoluafe1@gmail.com. Site pédagogique et personnel, non commercial.</p><h4>HÉBERGEMENT</h4><p>GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p><h4>PROPRIÉTÉ INTELLECTUELLE</h4><p>Les contenus de ce site sont ma création, sauf mention contraire. Les marques citées appartiennent à leurs propriétaires.</p><h4>ENTREPRISES CITÉES</h4><p>La BCI et TechForm NC sont citées à titre de parcours personnel et pédagogique. Ce site ne publie aucune donnée interne ni confidentielle.</p>"],["Confidentialité","<h4>DONNÉES COLLECTÉES</h4><p>Ce site ne collecte aucune donnée et n'utilise aucun cookie de suivi.</p><h4>STOCKAGE LOCAL</h4><p>Ton navigateur peut mémoriser ton choix de thème clair ou sombre. Cette donnée reste sur ton appareil.</p><h4>TES DROITS</h4><p>Conformément au RGPD, tu peux demander l'accès, la rectification ou la suppression de toute donnée transmise par e-mail, à lenzotoluafe1@gmail.com. Tu peux aussi saisir la CNIL.</p>"]][k];show("<h2>"+L[0]+"</h2>"+L[1])}
 
+/* effets : progression, apparition au défilement, compteurs, halo */
+(function(){var p=document.getElementById("prog");addEventListener("scroll",function(){var h=document.documentElement.scrollHeight-innerHeight;p.style.width=(h>0?scrollY/h*100:0)+"%"},{passive:true});
+document.addEventListener("mousemove",function(e){var c=e.target.closest&&e.target.closest(".glass");if(c){var r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px")}});
+var calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+document.querySelectorAll(".stat b[data-count]").forEach(function(b){var n=+b.dataset.count;if(calm||!("IntersectionObserver" in window)){b.textContent=n+(n>=100?"+":"");return}
+ var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1200),v=Math.round(n*(1-Math.pow(1-k,3)));b.textContent=v+(k===1&&n>=100?"+":"");if(k<1)requestAnimationFrame(f)})(t0)}});io.observe(b)});
+if(calm||!("IntersectionObserver" in window))return;
+var els=[].slice.call(document.querySelectorAll(".section-title,.glass,.project-card,.skill-card,.marquee")).filter(function(e){return !e.closest(".track")&&!e.closest("dialog")});
+els.forEach(function(e){e.classList.add("reveal")});
+var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io2.unobserve(x.target)}})},{threshold:.1});
+els.forEach(function(e){io2.observe(e)});
+var tk=0;function chk(){els.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<innerHeight*0.95)e.classList.add('in')})}
+addEventListener('scroll',function(){clearTimeout(tk);tk=setTimeout(chk,80)},{passive:true});setTimeout(chk,600)})();
+/* effets : halo, inclinaison 3D, boutons aimantés, teinte au défilement */
+(function(){var calm=matchMedia("(prefers-reduced-motion:reduce)").matches,touch=matchMedia("(hover:none)").matches,sp=document.querySelector(".spot"),bg=document.querySelector(".bg-blobs");
+if(!calm&&!touch){document.addEventListener("mousemove",function(e){sp.style.setProperty("--sx",e.clientX+"px");sp.style.setProperty("--sy",e.clientY+"px")},{passive:true});
+ var T=".project-card,.real-card,.cert-card,.pillar,.source,.ticket";
+ document.addEventListener("mousemove",function(e){var c=e.target.closest&&e.target.closest(T);if(!c)return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform="perspective(900px) rotateX("+(-y*7)+"deg) rotateY("+(x*9)+"deg) translateY(-4px)"});
+ document.addEventListener("mouseout",function(e){var c=e.target.closest&&e.target.closest(T);if(c&&!c.contains(e.relatedTarget))c.style.transform=""});
+ document.addEventListener("mousemove",function(e){var b=e.target.closest&&e.target.closest(".btn");if(!b)return;var r=b.getBoundingClientRect();b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.18)+"px,"+((e.clientY-r.top-r.height/2)*.3)+"px)"});
+ document.addEventListener("mouseout",function(e){var b=e.target.closest&&e.target.closest(".btn");if(b&&!b.contains(e.relatedTarget))b.style.transform=""})}
+if(!calm){var tick=0;addEventListener("scroll",function(){if(tick)return;tick=requestAnimationFrame(function(){tick=0;var h=document.documentElement.scrollHeight-innerHeight;bg.style.filter="hue-rotate("+(h>0?scrollY/h*75:0)+"deg)"})},{passive:true})}})();
 /* CV : cherche le PDF sous plusieurs noms quand le site est en ligne */
 (function(){var cv=document.querySelectorAll('a[href*="CV_Lenzo"]');cv.forEach(function(a){a.target="_blank";a.rel="noopener"});
 if(location.protocol.indexOf("http")!==0)return;
