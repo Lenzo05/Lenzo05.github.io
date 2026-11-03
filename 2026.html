@@ -133,6 +133,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
 .steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start}
 .steps li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-weight:700;font-size:13px}
 .term{background:#050914;border:1px solid var(--gb);border-radius:12px;padding:14px;font:13px/1.7 ui-monospace,Consolas,monospace;color:#cfe3ff;overflow-x:auto;white-space:pre}
+.def{color:var(--muted);font-size:.88em;font-weight:400}
 .gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:0}
 .gloss div{padding:10px 14px;border:1px solid var(--gb);border-radius:10px}
 .gloss dt{font-weight:700;color:var(--b);font-size:14px}
@@ -179,7 +180,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
  <div class="container hero-content">
   <div>
    <h1><span class="hero-name"><span>Lenzo</span><span>TOLUAFE</span></span><span class="hero-subtitle">ÉTUDIANT EN BTS SIO - OPTION SISR</span></h1>
-   <p class="hero-description">Alternant à la BCI (Banque Calédonienne d'Investissement), à Nouméa, au Pôle Infrastructure. Étudiant en BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructure, Systèmes et Réseaux). Attiré d'abord par la cuisine, je me suis tourné vers l'infrastructure : postes de travail, support utilisateurs, imprimantes, réseaux et durcissement de serveurs Linux. Demain, la cybersécurité.</p>
+   <p class="hero-description">Bonjour, je m'appelle Lenzo Toluafe. Je suis en deuxième année de BTS SIO (Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructure, Systèmes et Réseaux), et en alternance à la BCI (Banque Calédonienne d'Investissement), au Pôle Infrastructure.</p>
    <div class="hero-buttons">
     <a href="#about" class="btn btn-primary">Découvrir mon profil</a>
     <a href="#projects" class="btn">Mes projets</a>
@@ -196,10 +197,10 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
   <div class="about-content">
    <div class="glass about-text">
     <h3>Lenzo TOLUAFE</h3>
-    <p>Étudiant en BTS SIO (Services Informatiques aux Organisations) option SISR (Solutions d'Infrastructure, Systèmes et Réseaux), à Nouméa. SISR forme à installer, administrer et sécuriser le système d'information d'une organisation.</p>
-    <p>Au départ, je voulais devenir cuisinier. J'ai fait un stage de découverte et il m'avait plu : j'en ai gardé la rigueur et le calme sous pression. J'ai choisi SISR parce que j'aime découvrir et toucher à tout.</p>
-    <p>La cybersécurité m'attire depuis longtemps. Au départ, ce sont les hackers des films qui m'ont donné envie d'essayer. Puis j'ai compris que le vrai métier, c'est protéger et enquêter.</p>
-    <p>Après le BTS, j'hésite entre deux voies : la Gendarmerie nationale, sur le terrain ou comme cyber-enquêteur, ou la proposition de la BCI de continuer en école d'ingénieur puis de travailler pour elle.</p>
+    <p>Je suis en deuxième année de BTS SIO (Brevet de Technicien Supérieur Services Informatiques aux Organisations), option SISR (Solutions d'Infrastructure, Systèmes et Réseaux, qui forme à installer, administrer et sécuriser le système d'information d'une organisation).</p>
+    <p>Au départ, je voulais devenir cuisinier. J'ai fait un stage de découverte et il m'avait plu. J'en ai gardé la rigueur et le calme sous pression. Mais j'ai choisi SISR parce que j'aime découvrir et toucher à tout.</p>
+    <p>La cybersécurité m'attire depuis longtemps. Au départ, ce sont les hackers des films qui m'ont donné envie d'essayer. Puis j'ai compris que le vrai métier, c'est protéger.</p>
+    <p>Après le BTS, j'hésite entre deux voies. La première est la Gendarmerie, sur le terrain ou comme cyber-enquêteur. La seconde est la proposition de la BCI de continuer en école d'ingénieur.</p>
     <div class="hero-buttons"><a href="CV_Lenzo_TOLUAFE.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Télécharger mon CV</a><a href="Tableau_synthese_E5_TOLUAFE_Lenzo.xlsx" class="btn" download><i class="fas fa-table"></i> Tableau de synthèse E5</a></div>
    </div>
    <div class="skills">
@@ -231,7 +232,7 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
     <h3><i class="fas fa-graduation-cap"></i> Formation</h3>
     <div class="timeline">
      <div class="timeline-item"><div class="glass timeline-card"><h4>BTS SIO (Services Informatiques aux Organisations) option SISR</h4><span class="when">2025 - 2027</span><p>Lycée Dick Ukeiwe, Nouméa. Solutions d'infrastructure, systèmes et réseaux, en alternance.</p><img class="cert-img" alt="Lycée Dick Ukeiwe" data-f="lycee" style="aspect-ratio:16/7;margin-top:8px"></div></div>
-     <div class="timeline-item"><div class="glass timeline-card"><h4>Bac STMG option SIG</h4><span class="when">2024</span><p>Lycée Dick Ukeiwe. STMG : Sciences et Technologies du Management et de la Gestion. SIG : Systèmes d'Information de Gestion.</p></div></div>
+     <div class="timeline-item"><div class="glass timeline-card"><h4>Bac STMG option SIG</h4><span class="when">2024</span><p>Lycée Dick Ukeiwe. STMG (Sciences et Technologies du Management et de la Gestion), option SIG (Systèmes d'Information de Gestion).</p></div></div>
      <div class="timeline-item"><div class="glass timeline-card"><h4>Brevet des collèges</h4><span class="when">2021</span><p>Collège de Tuband.</p></div></div>
     </div>
    </div>
@@ -259,15 +260,15 @@ dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
   <h2 class="section-title">Autres réalisations</h2>
   <p class="veille-subtitle">Mes autres réalisations en formation et en alternance.</p>
   <div class="two">
-   <div class="glass info-card"><h3>Mon alternance à la BCI</h3><p>La BCI (Banque Calédonienne d'Investissement) a son siège à Nouméa. Je travaille au Pôle Infrastructure, dans le pool BUILD, qui construit les projets et gère le niveau 3, par opposition au pool RUN, qui exploite la production au quotidien. Mon sous-service est PDT (Poste De Travail), qui s'occupe des postes des utilisateurs.</p><p>Je fais du support N1 et N2 (niveau 1 : accueil de la demande, niveau 2 : expertise) avec les tickets dans ServiceNow, un outil d'ITSM (IT Service Management, la gestion des services informatiques). Je déploie des postes avec l'image entreprise (un système déjà préconfiguré), je gère les imprimantes et je prépare le matériel pour les agences.</p></div>
+   <div class="glass info-card"><h3>Mon alternance à la BCI</h3><p>Je travaille dans le pool BUILD (il construit les projets et gère le niveau 3, par opposition au pool RUN, qui exploite la production au quotidien), au sous-service PDT (Poste De Travail, les postes des utilisateurs).</p><p>Je fais du support niveau 1 et niveau 2 (niveau 1 : accueil de la demande, niveau 2 : expertise) avec les tickets ServiceNow (un outil d'ITSM, IT Service Management, la gestion des services informatiques). Je déploie des postes avec l'image entreprise (un système déjà préconfiguré). Je gère les imprimantes. Je prépare le matériel pour les agences.</p></div>
    <div class="glass info-card"><h3>Ma méthode de diagnostic</h3><ol class="steps"><li>Le physique (câble, alimentation)</li><li>Le réseau</li><li>Le logiciel</li><li>Les droits</li></ol><p>Je diagnostique toujours du plus simple au plus complexe. Je documente chaque cas dans le ticket, pour que n'importe qui puisse refaire la même chose.</p></div>
   </div>
   <div class="glass info-card" style="margin-bottom:24px"><h3>Exemple de ticket, lenteur d'Internet</h3>
    <ol class="steps">
     <li><span><b>Le problème.</b> Une utilisatrice signale une lenteur du réseau quand elle navigue sur Internet. Un collègue est allé voir et n'a rien trouvé d'anormal.</span></li>
-    <li><span><b>Ma prise en main.</b> Je lui ai proposé mon aide et je lui ai demandé ce qu'il avait vérifié : le débit, le câble branché sur le deuxième port Ethernet, le remplacement du téléphone IP. Il n'avait encore rien testé de tout ça. Le téléphone IP est branché sur le port Ethernet et relié jusqu'au boîtier Dell, qui lui donne la connexion.</span></li>
-    <li><span><b>Mon diagnostic.</b> J'ai pris le ticket en charge et je suis allé sur place. J'ai commencé par le plus simple, le physique. J'ai vérifié le câble : c'était bien un câble de catégorie 6, adapté au gigabit. Je l'ai quand même remplacé, mais le débit restait à 100 Mb/s. J'ai alors branché le câble sur le deuxième port.</span></li>
-    <li><span><b>Le résultat.</b> Le débit est passé de 100 Mb/s à 1 Gb/s. Le problème venait donc du port utilisé, pas du câble. L'incident était réglé et j'ai clôturé le ticket.</span></li>
+    <li><span><b>Ma prise en main.</b> Je lui ai proposé mon aide et je lui ai demandé ce qu'il avait vérifié : le débit, le câble branché sur le deuxième port Ethernet (la technologie des réseaux filaires), le remplacement du téléphone IP (un téléphone qui passe par le réseau). Il n'avait encore rien testé de tout ça. Le téléphone IP est branché sur le port Ethernet et relié jusqu'au boîtier Dell, qui lui donne la connexion.</span></li>
+    <li><span><b>Mon diagnostic.</b> J'ai pris le ticket en charge et je suis allé sur place. J'ai commencé par le plus simple, le physique. J'ai vérifié le câble : c'était bien un câble de catégorie 6 (adapté au gigabit). Je l'ai quand même remplacé, mais le débit restait à 100 Mb/s. J'ai alors branché le câble sur le deuxième port.</span></li>
+    <li><span><b>Le résultat.</b> Le débit est passé de 100 Mb/s (mégabits par seconde) à 1 Gb/s (gigabit par seconde). Le problème venait donc du port utilisé, pas du câble. L'incident était réglé et j'ai clôturé le ticket.</span></li>
    </ol>
    <p>Ce que j'en retiens : on élimine les causes une par une. Ici, le câble était bon, donc le problème venait du port.</p></div>
   <div class="real-grid" id="rgrid"></div>
@@ -372,7 +373,8 @@ function art(k){var A="var(--a)",B="var(--b)",C="#f97362",M="rgba(150,170,210,.3
  if(k==="term"){for(var q=0;q<6;q++)v+='<rect x="30" y="'+(26+q*24)+'" width="'+[110,170,90,200,130,70][q]+'" height="9" rx="4.5" fill="'+(q%3?(q%2?B:A):C)+'"/>';v+='<rect x="30" y="160" width="11" height="14" fill="'+C+'"/>'}
  return v+'</svg>'}
 function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
-function show(h){document.getElementById("dbody").innerHTML=h;if(!dlg.open)dlg.showModal()}
+function defify(el){el.innerHTML=el.innerHTML.replace(/\(([^()]*)\)/g,'<span class="def">($1)</span>')}
+function show(h){document.getElementById("dbody").innerHTML=h;document.querySelectorAll('#dbody li, #dbody p').forEach(defify);if(!dlg.open)dlg.showModal()}
 function imgFail(im){var g=im.closest(".gal");im.remove();if(g&&!g.children.length){var h=g.previousElementSibling;if(h&&h.tagName==="H4")h.remove();g.remove()}}
 function openP(k){var p=P[k],h='<h2>'+esc(p.t)+'</h2>';
  if(p.chips)h+='<div class="project-tags">'+p.chips.map(function(c){return'<span class="tag">'+esc(c)+'</span>'}).join("")+'</div>';
@@ -403,6 +405,7 @@ var R=[["helpdesk","Support Helpdesk N1/N2 à la BCI (niveaux 1 et 2, tickets Se
 var rg=document.getElementById("rgrid");
 R.forEach(function(r){var d=document.createElement("div");d.className="glass real-card";d.innerHTML='<div class="real-ico"><i class="fas '+r[3]+'"></i><img alt="Preuve : '+esc(r[1])+'"></div><span class="chip tag">'+r[2]+'</span><h4>'+esc(r[1])+'</h4>';rg.appendChild(d);var im=d.querySelector("img");find(im,"preuve-"+r[0]);im.addEventListener("click",function(){lbi.src=im.src;lbd.showModal()})});
 document.getElementById('lexg').innerHTML=LEX.map(function(g){return'<div><dt>'+esc(g[0])+'</dt><dd>'+esc(g[1])+'</dd></div>'}).join('');
+document.querySelectorAll('.hero-description, .about-text p, .timeline-card p, .slide p, .info-card p, .info-card li span, .veille-subtitle p, .veille-conclusion p').forEach(defify);
 /* mentions légales et confidentialité */
 function legal(k){var L=[["Mentions légales","<h4>ÉDITEUR</h4><p>Lenzo TOLUAFE, étudiant en BTS SIO option SISR, Nouméa, Nouvelle-Calédonie. Contact : lenzotoluafe1@gmail.com. Site pédagogique et personnel, non commercial.</p><h4>HÉBERGEMENT</h4><p>GitHub Pages, GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p><h4>PROPRIÉTÉ INTELLECTUELLE</h4><p>Les contenus de ce site sont ma création, sauf mention contraire. Les marques citées appartiennent à leurs propriétaires.</p><h4>ENTREPRISES CITÉES</h4><p>La BCI et TechForm NC sont citées à titre de parcours personnel et pédagogique. Ce site ne publie aucune donnée interne ni confidentielle.</p>"],["Confidentialité","<h4>DONNÉES COLLECTÉES</h4><p>Ce site ne collecte aucune donnée et n'utilise aucun cookie de suivi.</p><h4>STOCKAGE LOCAL</h4><p>Ton navigateur peut mémoriser ton choix de thème clair ou sombre. Cette donnée reste sur ton appareil.</p><h4>TES DROITS</h4><p>Conformément au RGPD, tu peux demander l'accès, la rectification ou la suppression de toute donnée transmise par e-mail, à lenzotoluafe1@gmail.com. Tu peux aussi saisir la CNIL.</p>"]][k];show("<h2>"+L[0]+"</h2>"+L[1])}
 
